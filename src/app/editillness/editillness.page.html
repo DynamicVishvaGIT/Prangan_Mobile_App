@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Illness</ion-title>
+    <ion-buttons slot="start">
+      <ion-button shape="round" (click)="closeModal()">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="editIllnessForm">
+  <form [formGroup]="editIllnessForm" (ngSubmit)="onSubmit(editIllnessForm.value)">
+    <ion-row>
+      <ion-col size="12">
+        <ion-label>Sickness & Ilnness </ion-label>
+        <ion-item lines="none">
+          <ion-input formControlName="illness" type="text" ></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(illness?.invalid && illness?.touched) || illness?.dirty">
+          <small *ngIf="illness.errors?.pattern" class="text-danger">Enter a valid illness</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>From Date </ion-label>
+        <ion-item lines="none">
+          <ion-datetime formControlName="from_date" displayFormat="DD MMM  YYYY" ></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>To Date </ion-label>
+        <ion-item lines="none">
+          <ion-datetime formControlName="to_date" displayFormat="DD MMM  YYYY" ></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-label>Add Prescription </ion-label>
+        <ion-item lines="none">
+          <img *ngIf="illness_obj.prescriptionImg" src="{{illness_obj?.prescriptionImg}}" alt="">
+          <ion-button color="primary" (click)="presentActionSheet()">
+            Upload Image
+          </ion-button>
+         
+        </ion-item>
+      </ion-col>
+      <ion-col size="12"  class="home-header-img" *ngIf="imageClicked && !pdfClicked">
+        <img src="{{base64Image}}" *ngIf="base64Image" alt="Avatar" width="215" />
+      </ion-col>
+      <!-- <ion-col size="6">
+        <ion-label></ion-label>
+        <ion-item lines="none">
+          <ion-input style="margin-top:26px" type="text" ></ion-input>
+        </ion-item>
+      </ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-checkbox formControlName="dont_prescription"></ion-checkbox>
+          <ion-label>I dont have prescription</ion-label>
+
+        </ion-item>
+      </ion-col>
+     
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+      
+          <ion-button [disabled]="editIllnessForm.invalid" shape="round" type="submit"  color="secondary">
+            Submit
+          </ion-button>
+      </ion-col>
+    </ion-row>
+    
+  </form>
+</div>
+</ion-content>

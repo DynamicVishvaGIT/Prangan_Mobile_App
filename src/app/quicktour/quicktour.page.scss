@@ -1,0 +1,310 @@
+ion-header{
+    box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0), 0 12px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+ion-card-subtitle{
+    color: #fff;
+    margin-left: 4px;
+}
+
+ion-title{
+    padding-left: 2px;
+}
+.class_type{
+    margin-top: 0;
+}
+.toolbar-div{
+    background: #fdd653;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    height: 200px;
+    .child-name {
+        margin-top: 16px;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .name {
+        margin-top: 0;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+
+    }
+    ion-card {
+        text-align: center;
+        border-radius: 18px;
+        margin-top: 0;
+        ion-col {
+            font-weight: bold;
+        }
+        img {
+            width: 20%;
+        }
+        ion-card-subtitle {
+            color: #202020;
+            margin-left: 0;
+            text-transform: none;
+        }
+    }
+    .heading {
+        font-weight: bold;
+        margin-left: 16px;
+    }
+
+    .data-card{
+        width: 100%;
+        box-shadow: rgb(0 0 0 / 11%) 0px 0px 12px 0px;
+        border-radius: 8px;
+        margin-left: 4px;
+        img {
+            width: 33%;
+            margin-top: 18px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-left: 8px;
+        }
+        ion-col {
+            p {
+                font-size: 12px;
+            }
+            img {
+                width: 62px;
+                height: 62px;
+
+            }
+
+        }
+    }
+    .date {
+        color: #202020;
+    }
+    .holiday {
+        color: #202020;
+        margin-left: 10px !important;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+}
+.toolbar-div-2{
+    background: #fdd653;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+    .child-name {
+        margin-top: 16px;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+    }
+    .name {
+        margin-top: 0;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+    }
+    ion-card {
+        text-align: center;
+        border-radius: 18px;
+        ion-col {
+            font-weight: bold;
+        }
+        img {
+            width: 20%;
+        }
+        ion-card-subtitle {
+            color: #202020;
+            margin-left: 0;
+            text-transform: none;
+        }
+    }
+    .heading {
+        font-weight: bold;
+        margin-left: 16px;
+    }
+
+    .data-card{
+        width: 100%;
+        box-shadow: rgb(0 0 0 / 11%) 0px 0px 12px 0px;
+        border-radius: 8px;
+        margin-left: 4px;
+        img {
+            width: 33%;
+            margin-top: 18px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-left: 8px;
+        }
+        ion-col {
+            p {
+                font-size: 12px;
+            }
+            img {
+                width: 62px;
+                height: 62px;
+
+            }
+
+        }
+    }
+    .date {
+        color: #202020;
+    }
+    .holiday {
+        color: #202020;
+        margin-left: 10px !important;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+}
+.see-btn-div{
+    .see{
+        color: #fdd653;
+    }
+    ion-button {
+        text-transform: none;
+        margin-top: -16px;
+        margin-right: 1px;
+    }
+}
+@media screen and (max-width: 360px){
+
+    .events-slider{
+        ion-slide{
+            ion-card{
+                height: 115px;
+            }
+        }
+    }
+}
+.time{
+    font-weight: bold;
+    color: #fdd653;
+}
+.daycare-btn{
+    --background:#ea1b26;
+    --color:#fff;
+}
+.preschool-btn{
+    --background:#218bba;
+    --color:#fff;
+}
+.daycare-btn,.preschool-btn{
+    height: 26px;
+}
+.toolbar-div-3{
+    background: #fdd653;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    height: 180px;
+    .child-name {
+        margin-top: 16px;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .name {
+        margin-top: 0;
+        margin-left: 56px;
+        margin-bottom: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+
+    }
+    ion-card {
+        text-align: center;
+        border-radius: 18px;
+        ion-col {
+            font-weight: bold;
+        }
+        img {
+            width: 20%;
+        }
+        ion-card-subtitle {
+            color: #202020;
+            margin-left: 0;
+            text-transform: none;
+        }
+    }
+    .heading {
+        font-weight: bold;
+        margin-left: 16px;
+    }
+
+    .data-card{
+        width: 100%;
+        box-shadow: rgb(0 0 0 / 11%) 0px 0px 12px 0px;
+        border-radius: 8px;
+        margin-left: 4px;
+        height: 150px;
+        img {
+            width: 33%;
+            margin-top: 18px;
+            border-radius: 50%;
+            margin-bottom: 8px;
+        }
+        p {
+            margin-left: 8px;
+            font-size: 12px;
+        }
+        ion-col {
+            p {
+                font-size: 12px;
+            }
+            img {
+                width: 62px;
+                height: 62px;
+
+            }
+
+        }
+    }
+    .date {
+        color: #202020;
+    }
+    .holiday {
+        color: #202020;
+        margin-left: 10px !important;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+}
+.name-2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+
+}
+.gallery-slider{
+    max-height: 150px;
+}
+
+

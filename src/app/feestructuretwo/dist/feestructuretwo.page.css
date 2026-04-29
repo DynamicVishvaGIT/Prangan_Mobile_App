@@ -1,0 +1,35 @@
+ion-content {
+  --background:#f3fbfe;
+}
+
+ion-button {
+  text-transform: none;
+}
+
+ion-card {
+  margin: 16px 0 0 0;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #b0ff86, #ffffff);
+}
+ion-card .heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0 8px 16px;
+}
+ion-card p {
+  font-size: 12px;
+  margin: 2px 8px -6px 16px;
+}
+ion-card ion-button {
+  margin-bottom: 16px;
+  text-transform: none;
+  width: 40%;
+  height: 35px;
+}
+ion-card .p-margin {
+  margin: 12px 8px 8px 16px;
+}
+
+.header {
+  font-weight: bold;
+}

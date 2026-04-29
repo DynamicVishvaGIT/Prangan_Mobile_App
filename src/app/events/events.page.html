@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Events</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/quicktour']"  >
+        <ion-icon name="arrow-back-sharp" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-row class="card-row card-top-row">
+      <ion-col size="3" >
+    <img src="../../assets/dashboard/01_events.png" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <p class="age">Summer Camp</p>
+        <hr>
+        <ion-row class="data-row">
+          <ion-col size="12">
+            <p class="header">Date</p>
+            <p class="value">19 Apr-22 May 2021</p>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row  class="data-row">
+          <ion-col size="9">
+           
+          </ion-col>
+          <ion-col size="3">
+            <ion-button  shape="round"(click)="openDetails('Summer Camp')" size="small" class="view-btn" color="primary"><p class="view-txt">View</p></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+     
+    </ion-row>
+  
+  </ion-card>
+  <ion-card>
+    <ion-row class="card-row card-top-row">
+      <ion-col size="3" >
+    <img src="../../assets/dashboard/02_events.png" alt="">
+      </ion-col>
+      <ion-col size="9">
+        <p class="age">Holi Color Making</p>
+        <hr>
+        <ion-row class="data-row">
+          <ion-col size="12">
+            <p class="header">Date</p>
+            <p class="value">27th March 2021</p>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row  class="data-row">
+          <ion-col size="9">
+           
+          </ion-col>
+          <ion-col size="3">
+            <ion-button  shape="round"(click)="openDetails('Holi Color Making')" size="small" class="view-btn" color="primary"><p class="view-txt">View</p></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+     
+    </ion-row>
+  
+  </ion-card>
+
+ 
+</ion-content>

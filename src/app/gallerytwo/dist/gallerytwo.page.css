@@ -1,0 +1,9 @@
+ion-content {
+  --background:#f3fbfe;
+}
+
+.frame-div {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}

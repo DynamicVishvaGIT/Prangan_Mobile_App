@@ -1,0 +1,63 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-advanced-http": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-appminimize": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-chooser": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-sms-retriever-manager": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "com.razorpay.cordova": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    }
+  },
+  "dependent_plugins": {}
+}

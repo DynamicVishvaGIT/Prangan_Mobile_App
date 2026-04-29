@@ -1,0 +1,50 @@
+
+<ion-content [fullscreen]="true">
+  <div class="img-block">
+  <img src="../../assets/otp_icon/OTP_icon.png" alt="">
+  <p class="otp-title"><b>OTP</b></p>
+  <p class="otp-text">Please enter OTP sent to your mobile number</p>
+  <p class="otp-text" *ngIf="mobNo"><b>{{mobNo}}</b></p>
+
+  </div>
+    <ion-row class="app-icon-container">
+      <ion-col class="ion-text-center ion-no-padding">
+  
+        <img src="../../assets/logo/login-2.png" />      
+      </ion-col>
+    </ion-row>
+  
+    <div id="container" class="margin-ionic padding-ionic-start padding-ionic-end">
+      <ng-otp-input
+  #ngOtpInput
+  (onInputChange)="onOtpChange($event)"
+  [config]="{
+          allowNumbersOnly: true,
+          length: 6,
+          isPasswordInput: false,
+          disableAutoFocus: false,
+          placeholder:'',
+          inputStyles: {
+          'color':'#202020',
+          'text-align':'center',
+          'background': '#bfbebc'
+          }
+        }"
+></ng-otp-input>
+     <br>
+     <br>
+     <div class="ion-text-center">
+      <ion-button shape="round"class="login-btn" (click)="onSubmit()"  fill="solid"  color="primary">
+    Submit 
+      </ion-button>
+     </div>
+   
+    <br>
+    <br>
+    <p class="ion-text-center terms">
+      Didn't receive OTP ?
+    </p>
+    <p class="resend" (click)="resendOTP()">Resend OTP</p>
+    </div>
+  </ion-content>
+  

@@ -1,0 +1,445 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["childotherinfo-childotherinfo-module"],{
+
+/***/ "9hIX":
+/*!*********************************************************!*\
+  !*** ./src/app/childotherinfo/childotherinfo.page.scss ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".wrap {\n  text-align: center;\n  position: relative;\n}\n\n.wrap:before {\n  content: \"\";\n  position: absolute;\n  top: 20%;\n  left: 18%;\n  border-top: 0.5px solid #677483;\n  border-width: thin;\n  width: 65%;\n  transform: translateY(-50%);\n  border-style: dashed;\n}\n\n.active {\n  border: 1px solid #2dd36f !important;\n  color: #ffffff;\n}\n\n.icon-circle {\n  position: relative;\n  display: inline-block;\n  margin: -1px;\n  width: 30px;\n  height: 30px;\n  font-size: 26px;\n  border-radius: 50%;\n  border: 1px solid #202020;\n  background: #fff;\n  color: #2dd36f;\n  text-align: center;\n}\n\n.icon-circle ion-icon {\n  margin-top: 2px;\n  font-size: 20px;\n}\n\n.header-1 {\n  color: #676767;\n  margin-bottom: 0;\n  font-size: 16px;\n}\n\n.heading-1 {\n  color: #676767;\n  margin-bottom: 0;\n  font-size: 16px;\n}\n\n.heading {\n  color: #9b9ca6;\n  margin-bottom: 0;\n  font-size: 14px;\n}\n\nion-label {\n  color: #9b9ca6;\n  font-size: 14px;\n}\n\nion-input {\n  border: 1px solid #9b9ca6;\n  border-radius: 5px;\n  --padding-start: 5px !important;\n  height: 35px;\n}\n\nion-textarea {\n  border: 1px solid #9b9ca6;\n  border-radius: 5px;\n  --padding-start: 5px !important;\n}\n\nion-datetime {\n  border: 1px solid #9b9ca6;\n  border-radius: 5px;\n  --padding-start: 5px !important;\n  width: 100%;\n  height: 35px;\n}\n\nion-item {\n  --padding-start: 0;\n  --ripple-color: transparent;\n  --background-activated: transparent;\n  --background-activated-opacity:transparent;\n  --background-focused: transparent;\n  --background-focused-opacity:transparent;\n  --background-hover: transparent;\n  --background-hover-opacity:transparent;\n}\n\nion-item ion-label {\n  font-size: 12px;\n  color: #9b9ca6;\n}\n\nion-radio-group ion-item {\n  border-bottom: 0;\n}\n\nion-radio-group ion-col {\n  padding-left: 0;\n}\n\nion-radio-group ion-radio {\n  margin-right: 8px;\n  width: 18px;\n  height: 18px;\n}\n\nion-col {\n  padding-left: 0;\n}\n\nion-button {\n  text-transform: none;\n}\n\n.choose-btn {\n  --background: #ee4a35;\n}\n\n.heading-3 {\n  margin-top: 12px;\n  color: #929791;\n}\n\n.color-green {\n  color: #2dd36f;\n  font-weight: bold;\n  margin-top: 10px;\n}\n\n.checkmark {\n  margin-top: -2px;\n}\n\n.dot {\n  color: #202020 !important;\n  margin-top: 2px;\n}\n\n.other-info {\n  margin-top: 16px;\n}\n\n.specify-item {\n  margin-top: 25px;\n}\n\n.admission-row ion-col {\n  text-align: center;\n  text-align: -moz-center;\n}\n\n.admission-row ion-col ion-button {\n  text-transform: none;\n  width: 80%;\n}\n\n.next-btn-col {\n  text-align: left !important;\n}\n\n.list-group.vertical-steps .list-group-item {\n  border: none;\n  border-left: 3px solid #b4b4b4;\n  box-sizing: border-box;\n  border-radius: 0;\n  counter-increment: step-counter;\n  padding-left: 20px;\n  padding-right: 0px;\n  padding-bottom: 7px;\n  padding-top: 0px;\n}\n\n.list-group.vertical-steps .list-group-item::before {\n  border-radius: 50%;\n  background-color: #b4b4b4;\n  color: #fff;\n  content: counter(step-counter);\n  display: inline-block;\n  float: left;\n  height: 25px;\n  line-height: 25px;\n  margin-left: -35px;\n  text-align: center;\n  width: 25px;\n}\n\n.list-group.vertical-steps .final::before {\n  border-radius: 50%;\n  background-color: #b4b4b4;\n  color: #fff;\n  content: counter(step-counter);\n  display: inline-block;\n  float: left;\n  height: 25px;\n  line-height: 25px;\n  margin-left: -32px;\n  text-align: center;\n  width: 25px;\n}\n\n.final {\n  border-left: none !important;\n}\n\n.step-active {\n  border-left: 3px solid #2dd36f !important;\n}\n\n.list-group.vertical-steps .step-active::before {\n  border-radius: 50%;\n  background-color: #2dd36f;\n  color: #fff;\n  content: counter(step-counter);\n  display: inline-block;\n  float: left;\n  height: 25px;\n  line-height: 25px;\n  margin-left: -35px;\n  text-align: center;\n  width: 25px;\n}\n\n.list-group.vertical-steps .list-group-item span, .list-group.vertical-steps .list-group-item a {\n  display: block;\n  overflow: hidden;\n  padding-top: 2px;\n}\n\ndiv.reusable_accordion {\n  z-index: 99;\n  padding: 0;\n  margin: 0;\n  list-style: none;\n  display: flex;\n  flex-wrap: wrap;\n  flex-direction: column;\n  justify-content: space-around;\n  line-height: 25px;\n  height: 180px;\n  background: #f1f1f1;\n  width: auto;\n}\n\ndiv.template_accordion div.template_containers {\n  display: flex;\n  min-width: 45%;\n  min-height: 60px;\n  background: white;\n  flex-direction: row;\n  margin: 5px;\n  justify-content: center;\n  align-content: center;\n}\n\n.toggle_button {\n  --background: #f1f1f1;\n  width: 100%;\n  text-align: center;\n  padding: 0;\n  color: #202020;\n  cursor: pointer;\n  min-width: 100%;\n}\n\n.toggle_button ion-label {\n  font-size: 16px;\n  color: #202020;\n  text-align: left;\n  margin-left: 20px;\n  font-weight: bold;\n}\n\ndiv.accordion-container {\n  overflow: hidden;\n  overflow-y: scroll;\n  transition: max-height 0.5s ease-in-out;\n  height: auto;\n  background: #1f2b37;\n}\n\ndiv.accordion-container.collapsed {\n  max-height: 0 !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2NoaWxkb3RoZXJpbmZvLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0VBQ0Esa0JBQUE7QUFDSjs7QUFFRTtFQUNFLFdBQUE7RUFDQSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxTQUFBO0VBQ0EsK0JBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSwyQkFBQTtFQUNBLG9CQUFBO0FBQ0o7O0FBQ0U7RUFDRSxvQ0FBQTtFQUNBLGNBQUE7QUFFSjs7QUFBRTtFQUNFLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxlQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLGtCQUFBO0FBR0o7O0FBREk7RUFDSSxlQUFBO0VBQ0EsZUFBQTtBQUdSOztBQUdFO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQUFKOztBQUVFO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQUNKOztBQUNBO0VBQ0ksY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQUVKOztBQUFBO0VBQ0ksY0FBQTtFQUNBLGVBQUE7QUFHSjs7QUFEQTtFQUNJLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSwrQkFBQTtFQUNBLFlBQUE7QUFJSjs7QUFGQTtFQUNJLHlCQUFBO0VBQ0Esa0JBQUE7RUFDQSwrQkFBQTtBQUtKOztBQUhBO0VBQ0kseUJBQUE7RUFDQSxrQkFBQTtFQUNBLCtCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7QUFNSjs7QUFIQTtFQUVJLGtCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQ0FBQTtFQUNBLDBDQUFBO0VBQ0EsaUNBQUE7RUFDQSx3Q0FBQTtFQUNBLCtCQUFBO0VBQ0Esc0NBQUE7QUFLSjs7QUFISTtFQUNJLGVBQUE7RUFDSixjQUFBO0FBS0o7O0FBQVE7RUFDSSxnQkFBQTtBQUdaOztBQURRO0VBQ0ksZUFBQTtBQUdaOztBQURRO0VBQ0EsaUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtBQUdSOztBQUNJO0VBQ0ksZUFBQTtBQUVSOztBQUNJO0VBQ0ksb0JBQUE7QUFFUjs7QUFBSTtFQUNJLHFCQUFBO0FBR1I7O0FBREk7RUFDSSxnQkFBQTtFQUNBLGNBQUE7QUFJUjs7QUFGSTtFQUNJLGNBQUE7RUFDQSxpQkFBQTtFQUNBLGdCQUFBO0FBS1I7O0FBSEk7RUFDSSxnQkFBQTtBQU1SOztBQUpJO0VBQ0kseUJBQUE7RUFDQSxlQUFBO0FBT1I7O0FBTEk7RUFDSSxnQkFBQTtBQVFSOztBQU5JO0VBQ0ksZ0JBQUE7QUFTUjs7QUFOUTtFQUNJLGtCQUFBO0VBQ0EsdUJBQUE7QUFTWjs7QUFSWTtFQUNJLG9CQUFBO0VBRUEsVUFBQTtBQVNoQjs7QUFKSTtFQUNJLDJCQUFBO0FBT1I7O0FBTEk7RUFDSSxZQUFBO0VBQ0EsOEJBQUE7RUFDQSxzQkFBQTtFQUNBLGdCQUFBO0VBQ0EsK0JBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtBQVFSOztBQU5NO0VBQ0Usa0JBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7RUFDQSw4QkFBQTtFQUNBLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FBU1I7O0FBUE07RUFDRSxrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsV0FBQTtFQUNBLDhCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUFVUjs7QUFSTTtFQUNFLDRCQUFBO0FBV1I7O0FBVE07RUFDRSx5Q0FBQTtBQVlSOztBQVZNO0VBQ0Usa0JBQUE7RUFDQSx5QkFBQTtFQUNBLFdBQUE7RUFDQSw4QkFBQTtFQUNBLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0Esa0JBQUE7RUFDQSxXQUFBO0FBYVI7O0FBWE07RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQWNSOztBQVhNO0VBQ0UsV0FBQTtFQUNBLFVBQUE7RUFDQSxTQUFBO0VBQ0EsZ0JBQUE7RUFLQSxhQUFBO0VBQ0EsZUFBQTtFQUNBLHNCQUFBO0VBQ0EsNkJBQUE7RUFDQSxpQkFBQTtFQUNBLGFBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7QUFjUjs7QUFYUTtFQUVFLGFBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtFQUdBLG1CQUFBO0VBQ0EsV0FBQTtFQUNBLHVCQUFBO0VBQ0EscUJBQUE7QUFjVjs7QUFWTTtFQUNFLHFCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLGNBQUE7RUFDQSxlQUFBO0VBQ0EsZUFBQTtBQWFSOztBQVpRO0VBQ0UsZUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0VBQ0EsaUJBQUE7QUFjVjs7QUFYTTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSx1Q0FBQTtFQUNBLFlBQUE7RUFDQSxtQkFBQTtBQWNSOztBQVhNO0VBQ0Usd0JBQUE7QUFjUiIsImZpbGUiOiJjaGlsZG90aGVyaW5mby5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIud3JhcCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XHJcbiAgfVxyXG4gIFxyXG4gIC53cmFwOmJlZm9yZSB7XHJcbiAgICBjb250ZW50OiBcIlwiO1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAyMCU7XHJcbiAgICBsZWZ0OiAxOCU7XHJcbiAgICBib3JkZXItdG9wOiAwLjVweCBzb2xpZCAjNjc3NDgzO1xyXG4gICAgYm9yZGVyLXdpZHRoOiB0aGluO1xyXG4gICAgd2lkdGg6IDY1JTtcclxuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNTAlKTtcclxuICAgIGJvcmRlci1zdHlsZTogZGFzaGVkO1xyXG4gIH1cclxuICAuYWN0aXZle1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzJkZDM2ZiAhaW1wb3J0YW50O1xyXG4gICAgY29sb3I6ICNmZmZmZmY7XHJcbiAgfVxyXG4gIC5pY29uLWNpcmNsZXtcclxuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIG1hcmdpbjogLTFweDtcclxuICAgIHdpZHRoOiAzMHB4O1xyXG4gICAgaGVpZ2h0OiAzMHB4O1xyXG4gICAgZm9udC1zaXplOiAyNnB4O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgIzIwMjAyMDtcclxuICAgIGJhY2tncm91bmQ6ICNmZmY7XHJcbiAgICBjb2xvcjogIzJkZDM2ZjtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHJcbiAgICBpb24taWNvbntcclxuICAgICAgICBtYXJnaW4tdG9wOiAycHg7XHJcbiAgICAgICAgZm9udC1zaXplOiAyMHB4O1xyXG4gICAgfVxyXG4gIFxyXG4gIH1cclxuICBcclxuICBcclxuICAuaGVhZGVyLTF7XHJcbiAgICBjb2xvcjogIzY3Njc2NztcclxuICAgIG1hcmdpbi1ib3R0b206IDA7XHJcbiAgICBmb250LXNpemU6IDE2cHg7XHJcbn1cclxuICAuaGVhZGluZy0xe1xyXG4gICAgY29sb3I6ICM2NzY3Njc7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgZm9udC1zaXplOiAxNnB4O1xyXG59XHJcbi5oZWFkaW5ne1xyXG4gICAgY29sb3I6ICM5YjljYTY7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcbmlvbi1sYWJlbHtcclxuICAgIGNvbG9yOiAjOWI5Y2E2O1xyXG4gICAgZm9udC1zaXplOiAxNHB4O1xyXG59XHJcbmlvbi1pbnB1dCB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAjOWI5Y2E2O1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgLS1wYWRkaW5nLXN0YXJ0OiA1cHggIWltcG9ydGFudDtcclxuICAgIGhlaWdodDozNXB4O1xyXG59XHJcbmlvbi10ZXh0YXJlYXtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM5YjljYTY7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDVweCAhaW1wb3J0YW50O1xyXG59XHJcbmlvbi1kYXRldGltZXtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICM5YjljYTY7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICAtLXBhZGRpbmctc3RhcnQ6IDVweCAhaW1wb3J0YW50O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6MzVweDtcclxuXHJcbn1cclxuaW9uLWl0ZW17XHJcbiAgICAvLyBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzY3NzQ4MztcclxuICAgIC0tcGFkZGluZy1zdGFydDogMDtcclxuICAgIC0tcmlwcGxlLWNvbG9yOiB0cmFuc3BhcmVudDtcclxuICAgIC0tYmFja2dyb3VuZC1hY3RpdmF0ZWQ6IHRyYW5zcGFyZW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWFjdGl2YXRlZC1vcGFjaXR5OnRyYW5zcGFyZW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWZvY3VzZWQ6IHRyYW5zcGFyZW50O1xyXG4gICAgLS1iYWNrZ3JvdW5kLWZvY3VzZWQtb3BhY2l0eTp0cmFuc3BhcmVudDtcclxuICAgIC0tYmFja2dyb3VuZC1ob3ZlciAgOiB0cmFuc3BhcmVudDtcclxuICAgIC0tYmFja2dyb3VuZC1ob3Zlci1vcGFjaXR5ICA6dHJhbnNwYXJlbnQ7XHJcblxyXG4gICAgaW9uLWxhYmVsIHtcclxuICAgICAgICBmb250LXNpemU6IDEycHg7XHJcbiAgICBjb2xvcjogIzliOWNhNjtcclxuXHJcbiAgICB9XHJcbn1cclxuICAgIGlvbi1yYWRpby1ncm91cHtcclxuICAgICAgICBpb24taXRlbXtcclxuICAgICAgICAgICAgYm9yZGVyLWJvdHRvbTogMDtcclxuICAgICAgICB9XHJcbiAgICAgICAgaW9uLWNvbCB7XHJcbiAgICAgICAgICAgIHBhZGRpbmctbGVmdDogMDtcclxuICAgICAgICB9XHJcbiAgICAgICAgaW9uLXJhZGlve1xyXG4gICAgICAgIG1hcmdpbi1yaWdodDogOHB4O1xyXG4gICAgICAgIHdpZHRoOiAxOHB4O1xyXG4gICAgICAgIGhlaWdodDogMThweDtcclxuICAgICAgICB9XHJcbiAgICB9XHJcblxyXG4gICAgaW9uLWNvbCB7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAwO1xyXG4gICAgfVxyXG5cclxuICAgIGlvbi1idXR0b24ge1xyXG4gICAgICAgIHRleHQtdHJhbnNmb3JtOiBub25lO1xyXG4gICAgfVxyXG4gICAgLmNob29zZS1idG57XHJcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjZWU0YTM1O1xyXG4gICAgfVxyXG4gICAgLmhlYWRpbmctM3tcclxuICAgICAgICBtYXJnaW4tdG9wOiAxMnB4O1xyXG4gICAgICAgIGNvbG9yOiAjOTI5NzkxO1xyXG4gICAgfVxyXG4gICAgLmNvbG9yLWdyZWVue1xyXG4gICAgICAgIGNvbG9yOiAjMmRkMzZmO1xyXG4gICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDEwcHg7XHJcbiAgICB9XHJcbiAgICAuY2hlY2ttYXJre1xyXG4gICAgICAgIG1hcmdpbi10b3A6IC0ycHg7XHJcbiAgICB9XHJcbiAgICAuZG90e1xyXG4gICAgICAgIGNvbG9yOiAjMjAyMDIwICFpbXBvcnRhbnQ7XHJcbiAgICAgICAgbWFyZ2luLXRvcDogMnB4O1xyXG4gICAgfVxyXG4gICAgLm90aGVyLWluZm8ge1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDE2cHg7XHJcbiAgICB9XHJcbiAgICAuc3BlY2lmeS1pdGVte1xyXG4gICAgICAgIG1hcmdpbi10b3A6IDI1cHg7XHJcbiAgICB9XHJcbiAgICAuYWRtaXNzaW9uLXJvd3tcclxuICAgICAgICBpb24tY29se1xyXG4gICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICAgICAgICAgIHRleHQtYWxpZ246IC1tb3otY2VudGVyO1xyXG4gICAgICAgICAgICBpb24tYnV0dG9ue1xyXG4gICAgICAgICAgICAgICAgdGV4dC10cmFuc2Zvcm06IG5vbmU7XHJcbiAgICAgICAgICAgICAgIFxyXG4gICAgICAgICAgICAgICAgd2lkdGg6IDgwJTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgICBcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICAubmV4dC1idG4tY29se1xyXG4gICAgICAgIHRleHQtYWxpZ246IGxlZnQgIWltcG9ydGFudDtcclxuICAgIH1cclxuICAgIC5saXN0LWdyb3VwLnZlcnRpY2FsLXN0ZXBzIC5saXN0LWdyb3VwLWl0ZW0ge1xyXG4gICAgICAgIGJvcmRlcjogbm9uZTtcclxuICAgICAgICBib3JkZXItbGVmdDogM3B4IHNvbGlkICNiNGI0YjQ7XHJcbiAgICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiAwO1xyXG4gICAgICAgIGNvdW50ZXItaW5jcmVtZW50OiBzdGVwLWNvdW50ZXI7XHJcbiAgICAgICAgcGFkZGluZy1sZWZ0OiAyMHB4O1xyXG4gICAgICAgIHBhZGRpbmctcmlnaHQ6IDBweDtcclxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogN3B4O1xyXG4gICAgICAgIHBhZGRpbmctdG9wOiAwcHg7XHJcbiAgICAgIH1cclxuICAgICAgLmxpc3QtZ3JvdXAudmVydGljYWwtc3RlcHMgLmxpc3QtZ3JvdXAtaXRlbTo6YmVmb3JlIHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2I0YjRiNDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBjb250ZW50OiBjb3VudGVyKHN0ZXAtY291bnRlcik7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgICAgIGhlaWdodDogMjVweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjVweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTM1cHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICB9XHJcbiAgICAgIC5saXN0LWdyb3VwLnZlcnRpY2FsLXN0ZXBzIC5maW5hbDo6YmVmb3JlIHtcclxuICAgICAgICBib3JkZXItcmFkaXVzOiA1MCU7XHJcbiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogI2I0YjRiNDtcclxuICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICBjb250ZW50OiBjb3VudGVyKHN0ZXAtY291bnRlcik7XHJcbiAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgIGZsb2F0OiBsZWZ0O1xyXG4gICAgICAgIGhlaWdodDogMjVweDtcclxuICAgICAgICBsaW5lLWhlaWdodDogMjVweDtcclxuICAgICAgICBtYXJnaW4tbGVmdDogLTMycHg7XHJcbiAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgICAgIHdpZHRoOiAyNXB4O1xyXG4gICAgICB9XHJcbiAgICAgIC5maW5hbHtcclxuICAgICAgICBib3JkZXItbGVmdDogbm9uZSAhaW1wb3J0YW50O1xyXG4gICAgICB9XHJcbiAgICAgIC5zdGVwLWFjdGl2ZXtcclxuICAgICAgICBib3JkZXItbGVmdDogM3B4IHNvbGlkICMyZGQzNmYgIWltcG9ydGFudDtcclxuICAgICAgfVxyXG4gICAgICAubGlzdC1ncm91cC52ZXJ0aWNhbC1zdGVwcyAuc3RlcC1hY3RpdmU6OmJlZm9yZSB7XHJcbiAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlO1xyXG4gICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMyZGQzNmY7XHJcbiAgICAgICAgY29sb3I6ICNmZmY7XHJcbiAgICAgICAgY29udGVudDogY291bnRlcihzdGVwLWNvdW50ZXIpO1xyXG4gICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICBmbG9hdDogbGVmdDtcclxuICAgICAgICBoZWlnaHQ6IDI1cHg7XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDI1cHg7XHJcbiAgICAgICAgbWFyZ2luLWxlZnQ6IC0zNXB4O1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICB3aWR0aDogMjVweDtcclxuICAgICAgfVxyXG4gICAgICAubGlzdC1ncm91cC52ZXJ0aWNhbC1zdGVwcyAubGlzdC1ncm91cC1pdGVtIHNwYW4sIC5saXN0LWdyb3VwLnZlcnRpY2FsLXN0ZXBzIC5saXN0LWdyb3VwLWl0ZW0gYSB7XHJcbiAgICAgICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICAgICAgb3ZlcmZsb3c6IGhpZGRlbjtcclxuICAgICAgICBwYWRkaW5nLXRvcDogMnB4O1xyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICBkaXYucmV1c2FibGVfYWNjb3JkaW9uIHtcclxuICAgICAgICB6LWluZGV4OiA5OTtcclxuICAgICAgICBwYWRkaW5nOiAwO1xyXG4gICAgICAgIG1hcmdpbjogMDtcclxuICAgICAgICBsaXN0LXN0eWxlOiBub25lO1xyXG4gICAgICAgIGRpc3BsYXk6IC13ZWJraXQtYm94O1xyXG4gICAgICAgIGRpc3BsYXk6IC1tb3otYm94O1xyXG4gICAgICAgIGRpc3BsYXk6IC1tcy1mbGV4Ym94O1xyXG4gICAgICAgIGRpc3BsYXk6IC13ZWJraXQtZmxleDtcclxuICAgICAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAgICAgIGZsZXgtd3JhcDogd3JhcDtcclxuICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xyXG4gICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYXJvdW5kO1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAyNXB4O1xyXG4gICAgICAgIGhlaWdodDogMTgwcHg7XHJcbiAgICAgICAgYmFja2dyb3VuZDogI2YxZjFmMTtcclxuICAgICAgICB3aWR0aDogYXV0bztcclxuICAgICAgfVxyXG4gICAgICBkaXYudGVtcGxhdGVfYWNjb3JkaW9uIHtcclxuICAgICAgICBkaXYudGVtcGxhdGVfY29udGFpbmVycyB7XHJcbiAgICAgICAgICBkaXNwbGF5OiAtd2Via2l0LWJveDtcclxuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICAgICAgICBtaW4td2lkdGg6IDQ1JTtcclxuICAgICAgICAgIG1pbi1oZWlnaHQ6IDYwcHg7XHJcbiAgICAgICAgICBiYWNrZ3JvdW5kOiB3aGl0ZTtcclxuICAgICAgICAgIC13ZWJraXQtYm94LW9yaWVudDogaG9yaXpvbnRhbDtcclxuICAgICAgICAgIC13ZWJraXQtYm94LWRpcmVjdGlvbjogbm9ybWFsO1xyXG4gICAgICAgICAgZmxleC1kaXJlY3Rpb246IHJvdztcclxuICAgICAgICAgIG1hcmdpbjogNXB4O1xyXG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XHJcbiAgICAgICAgfVxyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICAudG9nZ2xlX2J1dHRvbiB7XHJcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjZjFmMWYxO1xyXG4gICAgICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgICAgICBwYWRkaW5nOiAwO1xyXG4gICAgICAgIGNvbG9yOiAjMjAyMDIwO1xyXG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcclxuICAgICAgICBtaW4td2lkdGg6IDEwMCU7XHJcbiAgICAgICAgaW9uLWxhYmVse1xyXG4gICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgY29sb3I6ICMyMDIwMjA7XHJcbiAgICAgICAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG4gICAgICAgICAgbWFyZ2luLWxlZnQ6IDIwcHg7XHJcbiAgICAgICAgICBmb250LXdlaWdodDogYm9sZDtcclxuICAgICAgICB9XHJcbiAgICAgIH1cclxuICAgICAgZGl2LmFjY29yZGlvbi1jb250YWluZXIge1xyXG4gICAgICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgICAgICAgb3ZlcmZsb3cteTogc2Nyb2xsO1xyXG4gICAgICAgIHRyYW5zaXRpb246IG1heC1oZWlnaHQgMC41cyBlYXNlLWluLW91dDtcclxuICAgICAgICBoZWlnaHQ6IGF1dG87XHJcbiAgICAgICAgYmFja2dyb3VuZDogcmdiKDMxLCA0MywgNTUpO1xyXG4gICAgICB9XHJcbiAgICAgIFxyXG4gICAgICBkaXYuYWNjb3JkaW9uLWNvbnRhaW5lci5jb2xsYXBzZWQge1xyXG4gICAgICAgIG1heC1oZWlnaHQ6IDAgIWltcG9ydGFudDtcclxuICAgICAgfVxyXG4gICAgICAiXX0= */");
+
+/***/ }),
+
+/***/ "SFoo":
+/*!*****************************************************************!*\
+  !*** ./src/app/childotherinfo/childotherinfo-routing.module.ts ***!
+  \*****************************************************************/
+/*! exports provided: ChildotherinfoPageRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChildotherinfoPageRoutingModule", function() { return ChildotherinfoPageRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _childotherinfo_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./childotherinfo.page */ "ihey");
+
+
+
+
+const routes = [
+    {
+        path: '',
+        component: _childotherinfo_page__WEBPACK_IMPORTED_MODULE_3__["ChildotherinfoPage"]
+    }
+];
+let ChildotherinfoPageRoutingModule = class ChildotherinfoPageRoutingModule {
+};
+ChildotherinfoPageRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]],
+    })
+], ChildotherinfoPageRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "XLpl":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/childotherinfo/childotherinfo.page.html ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\n  <ion-toolbar>\n    <ion-title>Daycare Registration Form</ion-title>\n    <ion-buttons slot=\"start\">\n      <ion-button  shape=\"round\"[routerLink]=\"['/childprofile']\">\n        <ion-icon color=\"light\" name=\"arrow-back-outline\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n \n\n</ion-header>\n\n<ion-content>\n  <ion-item lines=\"none\" (click)=\"toggle_accordion()\" class=\"toggle_button\">\n    <ion-label  class=\"ion-text-wrap\">Food Habits ,Toilet Habits & Speech and Physical Growth</ion-label>\n    <ion-icon slot=\"end\" color=\"primary\" name=\"chevron-up-circle-outline\" *ngIf=\"!accordion_expanded\"></ion-icon>\n    <ion-icon slot=\"end\" color=\"primary\" name=\"chevron-down-circle-outline\" *ngIf=\"accordion_expanded\"></ion-icon>\n  </ion-item>\n\n\n  <div #accordion class='accordion-container' [style.maxHeight.px]=\"250\" [class.collapsed]=\"!accordion_expanded\">\n    <div class=\"reusable_accordion template_accordion\">\n      <ol class=\"list-group vertical-steps\" style=\"margin-top: 0;list-style: none;padding-left: 28px;\">\n        <li class=\"list-group-item step-active\" [routerLink]=\"['/addadmission']\" routerLinkActive=\"router-link-active\" ><span>Daycare Registration</span></li>\n        <li class=\"list-group-item step-active\" [routerLink]=\"['/childprofile']\"><span>Child's Enviroment & Child's medical record</span></li>\n        <li class=\"list-group-item step-active\"  routerLinkActive=\"router-link-active\" ><span>Food Habits ,Toilet Habits & Speech and Physical Growth</span></li>\n        <li class=\"list-group-item final\" [routerLink]=\"['/childotherinfotwo']\"><span>Consent Form</span></li>\n      </ol>\n    </div>\n  </div>\n  <div class=\"margin-ionic\">\n    <form [formGroup]=\"stepThreeForm\" (ngSubmit)=\"onSubmit(stepThreeForm.value)\">\n    <p class=\"header-1\"><b>Food Habits</b></p>\n    <p class=\"heading\">Would you classify the child  as : <span class=\"text-danger\">*</span></p>\n    <ion-radio-group formControlName=\"q1\" allowEmptySelection=\"false\" color=\"primary\">\n      <ion-row>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Good\"></ion-radio>\n            <ion-label>Good </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Average\"></ion-radio>\n            <ion-label>Average</ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Poor Eater\"></ion-radio>\n            <ion-label>Poor Eater</ion-label>\n          </ion-item>\n        </ion-col>\n     \n      </ion-row>\n    </ion-radio-group>\n    <p class=\"heading\">Is the child : </p>\n    <ion-radio-group formControlName=\"q2\" allowEmptySelection=\"false\" color=\"primary\">\n      <ion-row>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Vegetarian\"></ion-radio>\n            <ion-label>Vegetarian </ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Eggetarian\"></ion-radio>\n            <ion-label>Eggetarian</ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Non vegetarian\"></ion-radio>\n            <ion-label>Non Vegetarian</ion-label>\n          </ion-item>\n        </ion-col>\n     \n      </ion-row>\n    </ion-radio-group>\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-label>Any special dietary requirements ? </ion-label>\n        <ion-item lines=\"none\">\n          <ion-input formControlName=\"q3\" type=\"text\"></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col size=\"6\">\n        <ion-label>For which meal is the child most hungry ? </ion-label>\n        <ion-item lines=\"none\">\n          <ion-input type=\"text\" formControlName=\"q4\"></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-label>What is the child most favourite food ? </ion-label>\n    <ion-item lines=\"none\">\n      <ion-input type=\"text\" formControlName=\"q5\"></ion-input>\n    </ion-item>\n    <ion-label>Does the child feed ? </ion-label>\n    <ion-radio-group formControlName=\"q6\" allowEmptySelection=\"false\" color=\"primary\">\n      <ion-row>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"Himself/herself\"></ion-radio>\n            <ion-label>Himself / herself</ion-label>\n          </ion-item>\n        </ion-col>\n        <ion-col>\n          <ion-item lines=\"none\">\n            <ion-radio value=\"wait to be fed\"></ion-radio>\n            <ion-label>wants to be fed</ion-label>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n    </ion-radio-group>\n    <ion-label>What is his/her general attitude towards eating ? </ion-label>\n    <ion-item lines=\"none\">\n      <ion-input type=\"text\" formControlName=\"q7\"></ion-input>\n    </ion-item>\n    <br>\n    <p class=\"header-1\"> <b>Toilet Habits</b>\n    </p>\n<br>\n  <ion-label>Does the child decide when to go to the toilet or is a reminder needed ?  <span class=\"text-danger\">*</span></ion-label>\n  <ion-item lines=\"none\">\n  <ion-input type=\"text\" formControlName=\"q1_tol\"></ion-input>\n  </ion-item>\n\n  <ion-row>\n    <ion-col size=\"6\">\n      <ion-label>Word child uses for urination </ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q2_tol\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>Bowel movements </ion-label>\n      <ion-item lines=\"none\" >\n        <ion-input type=\"text\" formControlName=\"q3_tol\" class=\"bowel-input\"></ion-input>\n      </ion-item>\n    </ion-col>\n  </ion-row>\n\n  <ion-label>Usual time for bowel movements </ion-label>\n  <ion-item lines=\"none\" >\n    <ion-input type=\"text\" formControlName=\"q4_tol\" class=\"bowel-input\"></ion-input>\n  </ion-item>\n  <ion-label>Regular </ion-label>\n  <ion-item lines=\"none\">\n    <ion-input type=\"text\" formControlName=\"q5_tol\"></ion-input>\n  </ion-item>\n  <ion-label>Constipated </ion-label>\n  <ion-item lines=\"none\">\n    <ion-input type=\"text\" formControlName=\"q6_tol\"></ion-input>\n  </ion-item>\n\n \n  <ion-label>Willingly goes to toilet </ion-label>\n  <ion-item lines=\"none\">\n    <ion-input type=\"text\" formControlName=\"q7_tol\"></ion-input>\n  </ion-item>\n  <br>\n  <p class=\"header-1\"> <b>Speech and Physical Growth </b>\n  </p>\n  <ion-row>\n    <ion-col size=\"6\">\n      <ion-label>Does he/she talk well ? </ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q1_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>Fairly well </ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q2_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>Indistinctly </ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q3_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>not at all </ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q4_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>Does anyone read to him/her</ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q5_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n    <ion-col size=\"6\">\n      <ion-label>How regularly</ion-label>\n      <ion-item lines=\"none\">\n        <ion-input type=\"text\" formControlName=\"q6_sp\"></ion-input>\n      </ion-item>\n    </ion-col>\n  </ion-row>\n  <p class=\"heading\">At what age did he/she started : </p>\n  <ion-radio-group allowEmptySelection=\"false\" formControlName=\"q7_sp\" color=\"primary\">\n    <ion-row>\n      <ion-col>\n        <ion-item lines=\"none\">\n          <ion-radio value=\"Crawling\"></ion-radio>\n          <ion-label>Crawling </ion-label>\n        </ion-item>\n      </ion-col>\n      <ion-col>\n        <ion-item lines=\"none\">\n          <ion-radio value=\"walk\"></ion-radio>\n          <ion-label>Walk</ion-label>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-radio-group>\n  <p class=\"heading\">Walks without help ? : </p>\n  <ion-radio-group allowEmptySelection=\"false\" formControlName=\"q8_sp\" color=\"primary\">\n    <ion-row>\n      <ion-col>\n        <ion-item lines=\"none\">\n          <ion-radio value=\"Yes\"></ion-radio>\n          <ion-label>Yes </ion-label>\n        </ion-item>\n      </ion-col>\n      <ion-col>\n        <ion-item lines=\"none\">\n          <ion-radio value=\"No\"></ion-radio>\n          <ion-label>No</ion-label>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n  </ion-radio-group>\n  <ion-label>Sleep through the night \n  </ion-label>\n  <ion-item lines=\"none\">\n    <ion-input type=\"text\" formControlName=\"q9_sp\"></ion-input>\n  </ion-item>\n  <ion-label>Would you describe you child as active/quite/thin/average weight/heavy/tall/average height,or short: friendlt or not too friendly ? \n  </ion-label>\n  <ion-item lines=\"none\">\n    <ion-input type=\"text\" formControlName=\"q10_sp\"></ion-input>\n  </ion-item>\n    <ion-row class=\"admission-row\">\n      <ion-col >\n        <ion-button type=\"submit\" [disabled]=\"stepThreeForm.invalid\" shape=\"round\"  color=\"primary\">\n         Submit\n        </ion-button>\n      </ion-col>\n      <ion-col class=\"next-btn-col\">\n        <ion-button  shape=\"round\" [disabled]=\"!isFormSubmitted\" color=\"secondary\">\n          <!-- <ion-button  shape=\"round\" (click)=\"goToStep3()\" [disabled]=\"!isFormSubmitted\" color=\"secondary\"> -->\n          Next\n        </ion-button>\n      </ion-col>\n    </ion-row>\n  </form>\n  </div>\n</ion-content>\n");
+
+/***/ }),
+
+/***/ "ihey":
+/*!*******************************************************!*\
+  !*** ./src/app/childotherinfo/childotherinfo.page.ts ***!
+  \*******************************************************/
+/*! exports provided: ChildotherinfoPage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChildotherinfoPage", function() { return ChildotherinfoPage; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_childotherinfo_page_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./childotherinfo.page.html */ "XLpl");
+/* harmony import */ var _childotherinfo_page_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./childotherinfo.page.scss */ "9hIX");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/storage */ "e8h1");
+/* harmony import */ var _api_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./../api.service */ "yTNM");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+
+
+
+
+
+
+
+
+
+
+let ChildotherinfoPage = class ChildotherinfoPage {
+    constructor(storage, apiService, actionSheetController, alertController, router, loadingController, menuCtrl) {
+        this.storage = storage;
+        this.apiService = apiService;
+        this.actionSheetController = actionSheetController;
+        this.alertController = alertController;
+        this.router = router;
+        this.loadingController = loadingController;
+        this.menuCtrl = menuCtrl;
+        this.accordion_expanded = false;
+        this.isFormSubmitted = false;
+    }
+    ngOnInit() {
+        this.menuCtrl.enable(false);
+        this.stepThreeForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormGroup"]({
+            q1: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            q2: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q3: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q4: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q5: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q6: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q7: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q1_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('', _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required),
+            q2_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q3_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q4_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q5_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q6_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q7_tol: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q1_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q2_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q3_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q4_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q5_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q6_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q7_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q8_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q9_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"](''),
+            q10_sp: new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]('')
+        });
+    }
+    toggle_accordion() {
+        this.accordion_expanded = this.accordion_expanded === false;
+    }
+    presentLoading() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const loading = yield this.loadingController.create({
+                message: 'Please wait...',
+                mode: 'ios',
+                backdropDismiss: false
+            });
+            return loading.present();
+            const { role, data } = yield loading.onDidDismiss();
+            console.log('Loading dismissed!');
+        });
+    }
+    get q1() {
+        return this.stepThreeForm.get('q1');
+    }
+    get q2() {
+        return this.stepThreeForm.get('q2');
+    }
+    get q3() {
+        return this.stepThreeForm.get('q3');
+    }
+    get q4() {
+        return this.stepThreeForm.get('q4');
+    }
+    get q5() {
+        return this.stepThreeForm.get('q5');
+    }
+    get q6() {
+        return this.stepThreeForm.get('q6');
+    }
+    get q7() {
+        return this.stepThreeForm.get('q7');
+    }
+    get q1_tol() {
+        return this.stepThreeForm.get('q1_tol');
+    }
+    get q2_tol() {
+        return this.stepThreeForm.get('q2_tol');
+    }
+    get q3_tol() {
+        return this.stepThreeForm.get('q3_tol');
+    }
+    get q4_tol() {
+        return this.stepThreeForm.get('q4_tol');
+    }
+    get q5_tol() {
+        return this.stepThreeForm.get('q5_tol');
+    }
+    get q6_tol() {
+        return this.stepThreeForm.get('q6_tol');
+    }
+    get q7_tol() {
+        return this.stepThreeForm.get('q7_tol');
+    }
+    get q1_sp() {
+        return this.stepThreeForm.get('q1_sp');
+    }
+    get q2_sp() {
+        return this.stepThreeForm.get('q2_sp');
+    }
+    get q3_sp() {
+        return this.stepThreeForm.get('q3_sp');
+    }
+    get q4_sp() {
+        return this.stepThreeForm.get('q4_sp');
+    }
+    get q5_sp() {
+        return this.stepThreeForm.get('q5_sp');
+    }
+    get q6_sp() {
+        return this.stepThreeForm.get('q6_sp');
+    }
+    get q7_sp() {
+        return this.stepThreeForm.get('q7_sp');
+    }
+    get q8_sp() {
+        return this.stepThreeForm.get('q8_sp');
+    }
+    get q9_sp() {
+        return this.stepThreeForm.get('q9_sp');
+    }
+    get q10_sp() {
+        return this.stepThreeForm.get('q10_sp');
+    }
+    onSubmit(body) {
+        this.presentLoading();
+        console.log('body', body);
+        const formData = new FormData();
+        formData.append("userid", this.userid);
+        formData.append("q1", body['q1']);
+        formData.append("q2", body['q2']);
+        formData.append("q3", body['q3']);
+        formData.append("q4", body['q4']);
+        formData.append("q5", body['q5']);
+        formData.append("q6", body['q6']);
+        formData.append("q7", body['q7']);
+        formData.append("q1_tol", body['q1_tol']);
+        formData.append("q2_tol", body['q2_tol']);
+        formData.append("q3_tol", body['q3_tol']);
+        formData.append("q4_tol", body['q4_tol']);
+        formData.append("q5_tol", body['q5_tol']);
+        formData.append("q6_tol", body['q6_tol']);
+        formData.append("q7_tol", body['q7_tol']);
+        formData.append("q1_sp", body['q1_sp']);
+        formData.append("q2_sp", body['q2_sp']);
+        formData.append("q3_sp", body['q3_sp']);
+        formData.append("q4_sp", body['q4_sp']);
+        formData.append("q5_sp", body['q5_sp']);
+        formData.append("q6_sp", body['q6_sp']);
+        formData.append("q7_sp", body['q7_sp']);
+        formData.append("q8_sp", body['q8_sp']);
+        formData.append("q9_sp", body['q9_sp']);
+        formData.append("q10_sp", body['q10_sp']);
+        if (this.isDataPresent) {
+            formData.append("child_food_id", this.child_food_id);
+            formData.append("child_physical_id", this.child_physical_id);
+            this.apiService.updateDaycareRegStep3(formData).subscribe(data => {
+                console.log('data', data);
+                this.loadingController.dismiss();
+                this.presentAlert("Daycare Step 3 form updated successfully");
+                // this.stepThreeForm.reset()
+                console.log(data);
+            }, err => {
+                console.log(err);
+                this.loadingController.dismiss();
+                this.apiService.presentToast(err.error, 2000);
+            });
+        }
+        else {
+            this.apiService.daycareRegistrationStep3(formData).subscribe(data => {
+                console.log('data', data);
+                this.loadingController.dismiss();
+                this.presentAlert("Daycare Step 3 form submitted successfully");
+                this.stepThreeForm.reset();
+                console.log(data);
+            }, err => {
+                console.log(err);
+                this.loadingController.dismiss();
+                console.log(JSON.parse(err.error.message));
+                this.apiService.presentToast(JSON.parse(err.error.message), 2000);
+            });
+        }
+    }
+    ionViewDidEnter() {
+        this.menuCtrl.enable(false);
+        this.presentLoading().then(() => {
+            this.storage.get('user').then(data => {
+                if (data) {
+                    var user = JSON.parse(data);
+                    this.userid = user.id;
+                    console.log('userid', this.userid);
+                    this.apiService.fetchDayCareStep3(this.userid).then(data => {
+                        console.log('fetchDayCareStep3', data.data);
+                        var fetchDayCareStep3 = JSON.parse(data.data);
+                        if (fetchDayCareStep3) {
+                            this.fetchDayCareStep3_food = fetchDayCareStep3['a'];
+                            this.fetchDayCareStep3_phy = fetchDayCareStep3['b'];
+                            if (this.fetchDayCareStep3_food && this.fetchDayCareStep3_phy) {
+                                this.isFormSubmitted = true;
+                                this.child_food_id = this.fetchDayCareStep3_food.id;
+                                this.child_physical_id = this.fetchDayCareStep3_phy.id;
+                                this.stepThreeForm.patchValue({
+                                    'q1': this.fetchDayCareStep3_food.child_behaviour,
+                                    'q2': this.fetchDayCareStep3_food.is_the_child,
+                                    'q3': this.fetchDayCareStep3_food.dietary_requirements,
+                                    'q4': this.fetchDayCareStep3_food.meal,
+                                    'q5': this.fetchDayCareStep3_food.food,
+                                    'q6': this.fetchDayCareStep3_food.child_feed,
+                                    'q7': this.fetchDayCareStep3_food.attitude,
+                                    'q1_tol': this.fetchDayCareStep3_food.attitude,
+                                    'q2_tol': this.fetchDayCareStep3_food.toilet_hobits_q2,
+                                    'q3_tol': this.fetchDayCareStep3_food.toilet_hobits_q3,
+                                    'q4_tol': this.fetchDayCareStep3_food.toilet_hobits_q4,
+                                    'q5_tol': this.fetchDayCareStep3_food.toilet_hobits_q5,
+                                    'q6_tol': this.fetchDayCareStep3_food.toilet_hobits_q6,
+                                    'q7_tol': this.fetchDayCareStep3_food.toilet_hobits_q7,
+                                    'q1_sp': this.fetchDayCareStep3_phy.q1,
+                                    'q2_sp': this.fetchDayCareStep3_phy.q2,
+                                    'q3_sp': this.fetchDayCareStep3_phy.q3,
+                                    'q4_sp': this.fetchDayCareStep3_phy.q4,
+                                    'q5_sp': this.fetchDayCareStep3_phy.q5,
+                                    'q6_sp': this.fetchDayCareStep3_phy.q6,
+                                    'q7_sp': this.fetchDayCareStep3_phy.q7,
+                                    'q8_sp': this.fetchDayCareStep3_phy.q8,
+                                    'q9_sp': this.fetchDayCareStep3_phy.q9,
+                                    'q10_sp': this.fetchDayCareStep3_phy.q10,
+                                });
+                                this.isDataPresent = true;
+                                this.loadingController.dismiss();
+                            }
+                            else {
+                                this.isDataPresent = false;
+                                this.loadingController.dismiss();
+                            }
+                        }
+                        else {
+                            this.isDataPresent = false;
+                            this.loadingController.dismiss();
+                        }
+                    });
+                }
+            });
+        });
+    }
+    presentAlert(message) {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const alert = yield this.alertController.create({
+                header: 'Successful',
+                message: message,
+                mode: 'ios',
+                backdropDismiss: false,
+                buttons: [
+                    {
+                        text: 'OK',
+                        handler: () => {
+                            this.router.navigate(['childotherinfotwo']);
+                        }
+                    }
+                ],
+            });
+            yield alert.present();
+        });
+    }
+    ionViewWillEnter() {
+        if (this.menuCtrl.isEnabled) {
+            console.log('hi');
+            this.menuCtrl.swipeGesture(false);
+        }
+    }
+    goToNextStep() {
+        if (this.isFormSubmitted) {
+            this.router.navigate(['childotherinfotwo']);
+        }
+        else {
+            this.apiService.presentToast('Please submit  form to go next step', 3000);
+        }
+    }
+    ionViewDidLeave() {
+        this.menuCtrl.enable(true);
+    }
+};
+ChildotherinfoPage.ctorParameters = () => [
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_5__["Storage"] },
+    { type: _api_service__WEBPACK_IMPORTED_MODULE_6__["ApiService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["ActionSheetController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["AlertController"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["LoadingController"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_8__["MenuController"] }
+];
+ChildotherinfoPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
+        selector: 'app-childotherinfo',
+        template: _raw_loader_childotherinfo_page_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_childotherinfo_page_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], ChildotherinfoPage);
+
+
+
+/***/ }),
+
+/***/ "u85i":
+/*!*********************************************************!*\
+  !*** ./src/app/childotherinfo/childotherinfo.module.ts ***!
+  \*********************************************************/
+/*! exports provided: ChildotherinfoPageModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChildotherinfoPageModule", function() { return ChildotherinfoPageModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "TEn/");
+/* harmony import */ var _childotherinfo_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./childotherinfo-routing.module */ "SFoo");
+/* harmony import */ var _childotherinfo_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./childotherinfo.page */ "ihey");
+
+
+
+
+
+
+
+let ChildotherinfoPageModule = class ChildotherinfoPageModule {
+};
+ChildotherinfoPageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"],
+            _childotherinfo_routing_module__WEBPACK_IMPORTED_MODULE_5__["ChildotherinfoPageRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+        ],
+        declarations: [_childotherinfo_page__WEBPACK_IMPORTED_MODULE_6__["ChildotherinfoPage"]]
+    })
+], ChildotherinfoPageModule);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=childotherinfo-childotherinfo-module-es2015.js.map

@@ -1,0 +1,56 @@
+ion-content {
+  --background:#f3fbfe;
+}
+
+ion-card {
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0), 0 2px 4px 2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.11);
+}
+
+.name {
+  font-size: 16px;
+  margin-left: 12px;
+  margin-bottom: 6px;
+  color: #202020;
+  margin-top: 6px;
+}
+
+.card-row {
+  padding: 12px;
+  padding-bottom: 7px;
+  padding-right: 16px;
+}
+
+.card-top-row {
+  padding-bottom: 0px;
+}
+
+hr {
+  border-top: 1px dotted #9d9fa6;
+  margin: 0 8px;
+}
+
+.heading {
+  color: #9d9fa6;
+  margin-top: 0;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.value {
+  color: #202020;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.cancel-btn {
+  height: 36px;
+  margin-top: -10px;
+  text-transform: none;
+  margin-left: 10px;
+}
+
+.w-100 {
+  width: 100%;
+}

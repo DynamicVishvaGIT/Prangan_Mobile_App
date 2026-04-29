@@ -1,0 +1,111 @@
+// ion-content {
+//     --background:#f3fbfe;
+// }
+:host {  
+    --super-tabs-toolbar-background: #ffffff;
+    --st-indicator-color: #fdd653;
+    --st-indicator-height:3px;
+    --st-label-text-transform:none;
+    --st-label-color-active: #fdd653;
+  }
+ion-card {
+    margin: 16px 0 0 0;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #b0ff86 , #ffffff);
+    .heading{
+        font-size: 24px;
+        font-weight: bold;
+        margin: 20px 0 8px 16px;
+    }
+    p {
+        font-size: 12px;
+        margin: 2px 8px -6px 16px;
+    }
+    ion-button {
+        margin-bottom: 16px;
+        text-transform: none;
+        width: 40%;
+        // --border-radius: 6px;
+        height: 35px;
+    }
+    .p-margin{
+        margin: 12px 8px 8px 16px;
+        
+    }
+}
+.header{
+    font-weight: bold;
+}
+.amount-div{
+    
+    border-radius: 20px;
+    margin-bottom: 16px;
+    background: rgb(117, 250, 117);
+    padding: 8px;
+}
+ion-label{
+    color: #202020;
+    font-size: 14px;
+}
+ion-input {
+    border: 1px solid #9b9ca6;
+    border-radius: 5px;
+    --padding-start: 5px !important;
+    height:35px;
+}
+ion-textarea{
+    border: 1px solid #9b9ca6;
+    border-radius: 5px;
+    --padding-start: 5px !important;
+}
+ion-datetime{
+    border: 1px solid #9b9ca6;
+    border-radius: 5px;
+    --padding-start: 5px !important;
+    width: 100%;
+    height:35px;
+
+}
+hr{
+    background: #b1b1b1;
+}
+ion-item{
+    // border-bottom: 1px solid #677483;
+    --padding-start: 0;
+    --ripple-color: transparent;
+    --background-activated: transparent;
+    --background-activated-opacity:transparent;
+    --background-focused: transparent;
+    --background-focused-opacity:transparent;
+    --background-hover  : transparent;
+    --background-hover-opacity  :transparent;
+
+    ion-label {
+       
+    color: #9b9ca6;
+
+    }
+}
+    ion-radio-group{
+        ion-item{
+            border-bottom: 0;
+        }
+        ion-col {
+            padding-left: 0;
+        }
+        ion-radio{
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+        }
+    }
+
+    ion-col {
+        padding-left: 0;
+    }
+
+    ion-button {
+        text-transform: none;
+       
+        // width: 80%;
+    }

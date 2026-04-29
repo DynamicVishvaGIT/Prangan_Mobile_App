@@ -1,0 +1,36 @@
+ion-content {
+    --background:#f3fbfe;
+}
+img {
+    width: 40%;
+}
+.contact-info{
+    font-size: 20px;
+    color: #202020;
+
+    font-weight: bold;
+}
+.location{
+    color: #202020;
+    font-weight: bold;
+    font-size: 20px;
+}
+.location-icon {
+    width: 30%;
+    margin-top: 2px;
+}
+.call-value{
+    margin: 4px 0 0 -28px;
+
+}
+.mail-value{
+    margin: -1px 0 0 -28px;
+
+}
+.mail-row{
+    margin-top: 8px;
+}
+.value{
+ 
+    margin: 0 0 0 -28px;
+}

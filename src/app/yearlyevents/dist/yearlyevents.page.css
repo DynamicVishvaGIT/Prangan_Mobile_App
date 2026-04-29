@@ -1,0 +1,88 @@
+ion-content {
+  --background: #f3fbfe;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+img {
+  width: 90%;
+  margin-top: 5px;
+}
+
+ion-card {
+  margin: 16px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0), 0 2px 4px 2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.11);
+  padding: 8px;
+}
+
+.card-row {
+  padding: 12px;
+  padding-bottom: 7px;
+  padding-right: 16px;
+}
+
+.card-top-row {
+  padding: 0;
+}
+
+hr {
+  border-top: 1px dotted #9d9fa6;
+}
+
+.header {
+  color: #9d9fa6;
+  margin-top: 0;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.value {
+  color: #202020;
+  margin-top: 6px;
+  font-size: 12px;
+}
+
+.view-btn {
+  margin-top: 0;
+  text-transform: none;
+}
+
+.age {
+  font-size: 16px;
+  color: #202020;
+  margin-top: 6px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.view-txt {
+  font-size: 10px;
+}
+
+.data-row ion-col {
+  padding-left: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.date {
+  margin-left: 8px;
+  color: #202020;
+}
+
+.month {
+  margin-left: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.schedule_heading {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0;
+}

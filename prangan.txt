@@ -1,0 +1,10 @@
+key: Prangan
+pass: prangan
+
+keystore: 
+pass: prangan
+
+
+zipalign -v 4 /home/abc/searchclub-master/platforms/android/app/build/outputs/bundle/release/app-release.aab SearchClub2.aab
+
+zipalign -v 4 /home/abc/searchclub-master/platforms/android/app/build/outputs/bundle/release/app-release.aab SearchClub2.aab

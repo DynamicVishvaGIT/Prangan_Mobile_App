@@ -1,0 +1,261 @@
+<?php
+error_reporting(0);
+include '../Admin_config/connection.php';
+include 'header.php'; 
+include '../Admin_controllers/enquiry_controller.php';
+include '../Admin_modules/enquiry_model.php';
+//   print_r($_SESSION);
+if(!isset($_SESSION['mobile_number']))
+{
+ ?>
+ <script>
+     window.location.href="auth_login.php";
+ </script>
+ <?php
+}
+?>
+<style>
+label
+{
+    margin-top: 10px;
+}
+.box-body {
+padding: 0.5rem 1.5rem;
+-ms-flex: 1 1 auto;
+flex: 1 1 auto;
+border-radius: 10px;
+}
+</style>
+<script>
+$(function() {
+$("input[name='group1']").click(function() {
+ if ($("#radio_30").is(":checked")) {
+   $("#dvPinNo").show();
+ } else {
+   $("#dvPinNo").hide();
+ }
+});
+});
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body class="hold-transition light-skin sidebar-mini theme-primary">
+  <div class="wrapper">
+        <?php include 'navbar.php'; ?>
+        <?php include 'sidebar.php'; ?>
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+            <div class="container-full">
+            <!-- Main content -->
+            <section class="content">
+              <div class="row">
+    <div class="col-lg-12 col-12">
+        <div class="box">
+        <div class="box-header with-border">
+          <h4 class="box-title">Enquiry</h4>
+          <a href="fetch_enquiry.php" class="float-right">
+                            <button type="button" class="btn btn-dark">Back</button>
+                        </a>
+        </div>
+        
+        <!-- /.box-header -->
+        <form   method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data" class="form" >
+          <div class="box-body">
+            <!--<h4 class="box-title text-info"><i class="ti-user mr-15"></i> Personal Info</h4>-->
+            <!--<hr class="my-15">-->
+
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="box-body form-element">
+                      <div class="form-group row">
+                      <label class="col-sm-3 control-label">Admission Seeking For</label>
+                                        <div class="demo-radio-button">
+                                            <input name="class" type="radio" id="playgroup" class="with-gap radio-col-primary" value="Play Group" checked />
+                                             <label for="playgroup">Play Group</label>
+
+                                             <input name="class" type="radio" id="Nursery" class="with-gap radio-col-primary" value="Nursery"  />
+                                             <label for="Nursery">Nursery</label>
+
+                                             <input name="class" type="radio" id="DayCare" class="with-gap radio-col-primary" value="Day Care"  />
+                                             <label for="DayCare">Day Care</label>
+
+                                             <input name="class" type="radio" id="Jr_kg" class="with-gap radio-col-primary" value="Jr_kg"  />
+                                             <label for="Jr_kg">Jr.KG.</label>
+
+                                             <input name="class" type="radio" id="srkg" class="with-gap radio-col-primary" value="srkg"  />
+                                             <label for="srkg">Sr.KG</label>			
+                                        </div>
+                    </div>
+                </div>
+            </div>
+                            </div>
+                          
+            <div class="row">
+              <div class="col-md-6">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="first_name" class="col-sm-4">Child's First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-6">
+                                <div class="box-body ">
+                                    <div class="form-group row">
+                              <label for="last_name" class="col-sm-2">Surname</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="">
+                          </div>
+                                </div>
+              </div>								
+                            </div>
+            <div class="row">
+              <div class="col-md-4">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="d_o_b" class="col-sm-4">Child's DOB</label>
+                                <input type="date" class="form-control" id="d_o_b" name="d_o_b" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-3">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="child_age" class="col-sm-5">Child Age</label>
+                                <input type="text" class="form-control" id="child_age" name="child_age" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-5">
+                                <div class="box-body">
+                                    <div class="form-group">
+                              <label for="q6_ans" class="">Gender</label> 
+                                        <div class="c-inputs-stacked">
+                        <input name="gender" type="radio" id="Male" value="Male">
+                        <label for="Male" class="mr-30">Male</label>
+                        <input name="gender" type="radio" id="Female" value="Female">
+                        <label for="Female" class="mr-30">Female</label>
+                        <input name="gender" type="radio" id="Other" value="Other">
+                        <label for="Other" class="mr-30">Other</label>        										
+                                        </div>
+                          </div>
+                                </div>
+              </div>
+              
+                            </div> 
+            <div class="row">
+              <div class="col-md-12">
+                                <div class="form-group" style="padding-left: 20px;">
+                        <label>Home Address</label>
+                        <textarea class="form-control" rows="3" name="address" placeholder="Enter ..."></textarea>
+                      </div>
+              </div>
+            </div>                                
+            <div class="row">
+              <div class="col-md-4">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="mobile_1" class="col-sm-4 ">Mobile 1</label>
+                            <input type="text" class="form-control" id="mobile_1" name="mobile_1" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern=".{10,10}" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-4">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="mobile_2" class="col-sm-4">Mobile 2</label>
+                            <input type="text" class="form-control" id="mobile_2" name="mobile_2" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" pattern=".{10,10}" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-4">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="date" class="col-sm-6 ">Today's Date</label>
+                            <input type="date" class="form-control date1" id="date" name="date" placeholder="">
+                          </div>
+                                </div>
+              </div>								  
+                            </div>
+            <div class="row">
+              <div class="col-md-6">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="email_1" class="col-sm-4">Email 1</label>
+                            <input type="email" class="form-control" id="email_1" name="email_1" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              <div class="col-md-6">
+                                <div class="box-body with-border">
+                                    <div class="form-group row">
+                              <label for="email_2" class="col-sm-3">Email 2</label>
+                            <input type="email" class="form-control" id="email_2" name="email_2" placeholder="">
+                          </div>
+                                </div>
+              </div>
+              
+                            </div>
+            <div class="row">
+              <div class="col-md-12">
+                  <div class="box-body">
+                      <div class="form-group row">
+                      <label class="col-sm-3">How did you hear about us ?</label>
+                                        <div class="demo-radio-button">
+                        <input name="q1" type="radio" class="with-gap radio-col-primary" id="Facebook" value="Facebook">
+                        <label for="Facebook" class="mr-30">Facebook</label>
+                        <input name="q1" type="radio" class="with-gap radio-col-primary" id="Instagram" value="Instagram">
+                        <label for="Instagram" class="mr-30">Instagram</label>
+                        <input name="q1" type="radio" class="with-gap radio-col-primary" id="Google" value="Google">
+                        <label for="Google" class="mr-30">Google</label>   
+                        <input name="q1" type="radio" class="with-gap radio-col-primary" id="Friend" value="Friend">
+                        <label for="Friend" class="mr-30">Friend</label>
+                        <input name="q1" type="radio" class="with-gap radio-col-primary" id="Other" value="Other">
+                        <label for="Other" class="mr-30">Other</label>         										
+                                        </div>
+                    </div>
+                </div>
+            </div>
+                            </div>   
+                          
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer text-right">
+            <a href="enqyiry.php"><button type="button" class="btn btn-rounded btn-warning mr-1">Cancel
+            </button></a>
+            <button type="submit" name="add_enquiry" class="btn btn-rounded">Save
+            </button>
+          </div>  
+        </form>
+        </div>
+        <!-- /.box -->			
+    </div> 
+              </div>
+            </section>
+            <!-- /.content -->
+            </div>
+          </div>
+             <!-- /.content-wrapper -->
+            <?php include 'footer.php'; ?>
+
+             <!-- Control Sidebar -->
+            <?php include 'control_sidebar.php'; ?>
+             <!-- /.control-sidebar -->
+
+             <!-- Add the sidebar's background. This div must be placed immediately after the control sidebar -->
+             <div class="control-sidebar-bg"></div>
+
+    </div>
+    <!-- ./wrapper -->	 
+
+    <!-- Vendor JS -->
+    <?php include 'script.php'; ?>
+<script>
+$("#f_name,#l_name").on('keyup', function(e) {
+var val = $(this).val();
+if (val.match(/[^a-zA-Z\s]/g)) {
+   $(this).val(val.replace(/[^a-zA-Z\s]/g, ''));
+}
+});
+</script>	
+
+</body>
+</html>

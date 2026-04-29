@@ -1,0 +1,326 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Enquiry Form</ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-button  shape="round" (click)="goBack()">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<p class="ion-text-center heading-1">
+  <b>Preschool and Daycare</b> 
+</p>
+<form [formGroup]="enquiryForm" (ngSubmit)="onSubmit(enquiryForm.value)">
+
+<div class="margin-ionic">
+
+<p class="heading required">Prangan Centres</p>
+<ion-radio-group allowEmptySelection="false" color="primary" formControlName="branch_id">
+  <ion-row *ngIf="branches">
+    <ion-col *ngFor="let branch of branches">
+      <ion-item lines="none">
+        <ion-radio value="{{branch.id}}"></ion-radio>
+        <ion-label>{{branch.branch_name}}</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-radio-group>
+<p class="heading required">Admission Seeking For</p>
+<ion-radio-group allowEmptySelection="false" color="primary" formControlName="class">
+  <ion-row >
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Play Group" ></ion-radio>
+        <ion-label>Play Group</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Nursery" ></ion-radio>
+        <ion-label>Nursery</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Day Care" ></ion-radio>
+       <ion-label>Daycare</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Jr_kg" ></ion-radio>
+       <ion-label>Jr.Kg</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="srkg"></ion-radio>
+       <ion-label>Sr.Kg</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-radio-group>
+<ion-row>
+  <ion-col size="6">
+    <ion-label class="required">Child's First Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="first_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(first_name?.invalid && first_name?.touched) || first_name?.dirty">
+      <small *ngIf="first_name.errors?.pattern" class="text-danger">Enter a valid name </small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label class="required">Child's Last Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="last_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(last_name?.invalid && last_name?.touched) || last_name?.dirty">
+      <small *ngIf="last_name.errors?.pattern" class="text-danger">Enter a valid name </small>
+    </div>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="6">
+    <ion-label class="required">Child's DOB</ion-label>
+    <ion-item lines="none">
+      <ion-datetime displayFormat="DD MMM  YYYY" formControlName="d_o_b" max="{{todays_date}}" (ionChange)="ageFromDOB($event)"></ion-datetime>
+    </ion-item>
+  </ion-col>
+  <!-- <ion-col size="6">
+    <ion-label>Child's Age</ion-label>
+    <ion-item lines="none">
+      <ion-input type="number" formControlName="child_age" maxLength="2"></ion-input>
+    </ion-item>
+  </ion-col> -->
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+<ion-label class="required">Gender</ion-label>
+
+    <ion-radio-group allowEmptySelection="false" color="primary" formControlName="gender">
+      <ion-row >
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Boy" ></ion-radio>
+            <ion-label>Boy</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Girl" ></ion-radio>
+            <ion-label>Girl</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Other" ></ion-radio>
+            <ion-label>Other</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+  </ion-col>
+</ion-row>
+<br>
+
+<ion-label class="required">Home Address</ion-label>
+<ion-item lines="none">
+  <ion-textarea rows="6" cols="20" formControlName="address"></ion-textarea>
+</ion-item>
+<div style="color: var(--ion-color-danger);" *ngIf="enquiryForm.controls['address'].touched && enquiryForm.controls['address'].hasError('maxlength')">
+  Enter a  Maximum of 100 characters only.
+</div>
+<div *ngIf="(address.invalid && address.touched) || address.dirty">
+  <small *ngIf="address.errors?.required" style="color: red;">Address is required</small>
+  <!--question mark(?) is a safe navigation operator-->
+  <small *ngIf="address.errors?.pattern" style="color: red;">Address Contains Invalid Characters.</small>
+</div>  
+<br>
+<ion-row>
+  <ion-col size="6">
+    <ion-label class="required">Mother's Name
+    </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="mothers_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mothers_name?.invalid && mothers_name?.touched) || mothers_name?.dirty">
+      <small *ngIf="mothers_name.errors?.pattern" class="text-danger">Enter a valid name </small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label class="required">Mother's contact number
+    </ion-label>
+    <ion-item lines="none">
+      <ion-input type="tel" maxlength="10" formControlName="mothers_no"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mothers_no?.invalid && mothers_no?.touched) || mothers_no?.dirty">
+      <small *ngIf="mothers_no.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label class="required">Mother's Email ID</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="mothers_email"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mothers_email?.invalid && mothers_email?.touched) || mothers_email?.dirty">
+      <small *ngIf="mothers_email.errors?.pattern" class="text-danger">Enter a valid email id</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label class="required">Mother's Job Profile</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="mothers_job_profile"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mothers_job_profile?.invalid && mothers_job_profile?.touched) || mothers_job_profile?.dirty">
+      <small *ngIf="mothers_job_profile.errors?.pattern" class="text-danger">Enter a valid job profile</small>
+    </div>
+  </ion-col>
+</ion-row>
+<ion-row>
+  <ion-col size="6">
+    <ion-label  class="required">Father's  Name
+    </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="fathers_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(fathers_name?.invalid && fathers_name?.touched) || fathers_name?.dirty">
+      <small *ngIf="fathers_name.errors?.pattern" class="text-danger">Enter a valid name </small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label  class="required">Father's contact number
+    </ion-label>
+    <ion-item lines="none">
+      <ion-input type="tel" maxlength="10" formControlName="fathers_no"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(fathers_no?.invalid && fathers_no?.touched) || fathers_no?.dirty">
+      <small *ngIf="fathers_no.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label  class="required">Father's Email ID</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="fathers_email"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(fathers_email?.invalid && fathers_email?.touched) || fathers_email?.dirty">
+      <small *ngIf="fathers_email.errors?.pattern" class="text-danger">Enter a valid email id</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label class="required">Father's Job Profile</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="fathers_job_profile"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mothers_job_profile?.invalid && fathers_job_profile?.touched) || fathers_job_profile?.dirty">
+      <small *ngIf="fathers_job_profile.errors?.pattern" class="text-danger">Enter a valid job profile</small>
+    </div>
+  </ion-col>
+  <!-- <ion-col size="6">
+    <ion-label>Sibling (if any)</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="siblings"></ion-input>
+    </ion-item>
+ 
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>Sibling's Name</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="siblings_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(siblings_name?.invalid && siblings_name?.touched) || siblings_name?.dirty">
+      <small *ngIf="siblings_name.errors?.pattern" class="text-danger">Enter a valid name</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>Sibling's Date of Birth</ion-label>
+    <ion-item lines="none">
+      <ion-datetime displayFormat="DD MMM  YYYY" formControlName="sibling_d_o_b" max="{{todays_date}}" (ionChange)="ageFromDOB($event)"></ion-datetime>
+    </ion-item>
+  </ion-col> -->
+</ion-row>
+<!-- <ion-row>
+  <ion-col size="6">
+    <ion-label>Mobile Number 1</ion-label>
+    <ion-item lines="none">
+      <ion-input type="tel" maxlength="10" formControlName="mobile_1"></ion-input>
+
+    </ion-item>
+    <div class="error-div" *ngIf="(mobile_1?.invalid && mobile_1?.touched) || mobile_1?.dirty">
+      <small *ngIf="mobile_1.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>Mobile Number 2</ion-label>
+    <ion-item lines="none">
+      <ion-input type="tel" maxlength="10" formControlName="mobile_2"></ion-input>
+
+    </ion-item>
+    <div class="error-div" *ngIf="(mobile_2?.invalid && mobile_2?.touched) || mobile_2?.dirty">
+      <small *ngIf="mobile_2.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+    </div>
+  </ion-col>
+ 
+  <ion-col size="6">
+    <ion-label>Email 2</ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="email_2"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(email_2?.invalid && email_2?.touched) || email_2?.dirty">
+      <small *ngIf="email_2.errors?.pattern" class="text-danger">Enter a valid email id</small>
+    </div>
+  </ion-col>
+</ion-row> -->
+<br>
+
+<p class="heading required">How did you hear about us ?</p>
+<ion-radio-group allowEmptySelection="false" color="primary" formControlName="q1">
+  <ion-row >
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Facebook" ></ion-radio>
+        <ion-label>Facebook</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Instagram" ></ion-radio>
+        <ion-label>Instagram</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Google" ></ion-radio>
+       <ion-label>Google</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Friend" ></ion-radio>
+       <ion-label>Friends</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col size="4">
+      <ion-item lines="none">
+        <ion-radio value="Other" ></ion-radio>
+       <ion-label>Others</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-radio-group>
+<div class="ion-text-center">
+  <ion-button [disabled]="enquiryForm.invalid" type="submit" shape="round"   color="primary">
+    Submit
+  </ion-button>
+</div>
+
+</div>
+</form>
+
+</ion-content>

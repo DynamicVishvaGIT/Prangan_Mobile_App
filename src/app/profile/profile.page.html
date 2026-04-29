@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/quicktour']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button  shape="round" fill="outline" color="light" (click)="openEdit()">
+        <ion-icon color="light" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <br>
+  <div *ngIf="profile">
+
+ 
+<div class="img-block">
+  <img src="{{profile.child_img}}" alt="">
+</div>
+<br>
+<ion-card mode="ios">
+ 
+  <div class="margin-ionic-start margin-ionic-top card-div">
+
+<p class="heading">Name</p>
+<p class="value">{{profile.child_name|titlecase}}</p>
+
+<p class="heading">Date of Birth</p>
+<p class="value">{{profile.dob|date:'dd MMM,yyyy'}}</p>
+
+<p class="heading" *ngIf="profile.child_age1">Age</p>
+<p class="value" *ngIf="profile.child_age1">{{profile.child_age1}}</p>
+
+<p class="heading" *ngIf="profile.class">Admission Type</p>
+<p class="value" *ngIf="profile.class">{{profile.class}}</p>
+
+<p class="heading" *ngIf="profile.father_mobile_number">Father Mobile No.</p>
+<p class="value" *ngIf="profile.father_mobile_number">{{profile.father_mobile_number}}</p>
+
+<p class="heading" *ngIf="profile.mother_mobile_number">Mother Mobile No.</p>
+<p class="value" *ngIf="profile.mother_mobile_number">{{profile.mother_mobile_number}}</p>
+
+<!-- <p class="heading">Guardian Mobile No.</p>
+<p class="value">{{profile.child_name}}</p> -->
+
+<p class="heading" *ngIf="profile.address">Address</p>
+<p class="value" *ngIf="profile.address">{{profile.address}}</p>
+
+<p class="heading" *ngIf="profile.gender">Gender</p>
+<p class="value" *ngIf="profile.gender">{{profile.gender}}</p>
+
+<p class="heading" *ngIf="profile.emailid">Email</p>
+<p class="value" *ngIf="profile.emailid">{{profile.emailid}}</p>
+<br>
+</div>
+
+</ion-card>
+</div>
+</ion-content>

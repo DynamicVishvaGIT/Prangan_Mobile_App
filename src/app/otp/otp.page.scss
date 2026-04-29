@@ -1,0 +1,95 @@
+.app-icon-container {
+    top:50%;
+  
+  }
+  #container {
+    margin-top: 10%;
+  }
+  .img-block {
+    width: 50%;
+    z-index: 1000;
+    position: absolute;
+    top: 2%;
+    left: 25%;
+    .otp-title{
+      color: #fff;
+      font-size: 22px;
+      text-align: center;
+      margin-top: -15px;
+      margin-bottom: 0;
+    }
+    .otp-text{
+      color: #fff;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 0px;
+    }
+    }
+  ion-item {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    height: 34px;
+    border-radius: 4px;
+  }
+  ion-input {
+    margin-top: -16px;
+    border-bottom: 1px solid #e1e1e1;
+
+  }
+
+ 
+  ion-button {
+    // --padding-top: 25px;
+    // --padding-bottom: 25px;
+    font-size: 13px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  
+  
+  .item-has-focus {
+    --highlight-background: none;
+  }
+  .log-icon {
+    margin-right: 8px;
+  }
+
+
+  .btn-text{
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .login-btn{
+    // --padding-bottom: 10px;
+    text-transform: none;
+  }
+
+ 
+
+
+  .terms {
+    color: #919191;
+    font-size: 14px;
+  }
+  .otp-input{
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+.input-selected{
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+ng-otp-input{
+    text-align: center;
+}
+.resend{
+    color: #202020;
+    text-align: center;
+    text-decoration: underline;
+}

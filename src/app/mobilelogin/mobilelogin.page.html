@@ -1,0 +1,34 @@
+<ion-content [fullscreen]="true">
+  <div class="img-block">
+    <img src="../../assets/logo/prangan-logo.png" alt="">
+
+  </div>
+  <ion-row class="app-icon-container">
+    <ion-col class="ion-text-center ion-no-padding">
+
+      <img src="../../assets/logo/login-2.png" />
+    </ion-col>
+  </ion-row>
+
+  <div id="container" class="margin-ionic padding-ionic-start padding-ionic-end">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+        
+      <ion-input type="tel"  maxlength="10" placeholder="Enter Mobile Number"  formControlName="userMobile"></ion-input>
+      <div class="error-div" *ngIf="(userMobile?.invalid && userMobile?.touched) || userMobile?.dirty">
+        <small *ngIf="userMobile.errors?.pattern" class="text-danger">Enter a valid mobile number </small>
+      </div>
+      <br>
+      <br>
+      <ion-button type="submit" [disabled]="loginForm.invalid" shape="round" class="login-btn"  expand="block" fill="solid"
+        color="primary">
+        <p class="btn-text">Submit </p>
+      </ion-button>
+    </form>
+    <p class="ion-text-center terms">
+      Terms & conditions
+    </p>
+  </div>
+</ion-content>
+<ion-footer>
+
+</ion-footer>

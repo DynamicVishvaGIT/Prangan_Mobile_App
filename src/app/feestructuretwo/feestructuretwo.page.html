@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="branch_name">{{branch_name|titlecase}} Fees Structure</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/feestructure']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="padding-ionic" *ngIf="columns">
+  <!-- <ion-card mode="ios" > -->
+   <br>
+  
+
+  <ion-card mode="ios" *ngFor="let column of columns">
+    <p class="heading"><b>{{column.name|titlecase}}</b></p>
+    <ion-row>
+      <ion-col size="6" *ngFor="let row of filtered_row">
+        <p class="header">{{row.name}} : </p>
+        <span *ngFor="let item of row.amount_arary">
+          <p class="p-margin" *ngIf="item.column_id==column.id">₹ {{item.amount}}</p>
+         
+        </span>
+      </ion-col>
+    </ion-row>
+   <br>
+    <div class="ion-text-center">
+      <ion-button  shape="round" size="default" class="view-btn" color="primary" (click)="openPdf()" >View PDF</ion-button>
+
+    </div>
+  </ion-card>
+   
+
+</div>
+</ion-content>

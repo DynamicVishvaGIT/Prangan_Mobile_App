@@ -1,0 +1,18 @@
+ion-content, ion-item {
+  --background:#f3fbfe;
+}
+
+.notification-div {
+  margin: 8px;
+}
+
+.empty-div {
+  padding: 20px;
+}
+.empty-div ion-label {
+  font-size: 30px;
+}
+
+ion-label {
+  white-space: pre-line !important;
+}

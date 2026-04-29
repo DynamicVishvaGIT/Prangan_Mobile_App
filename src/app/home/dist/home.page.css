@@ -1,0 +1,115 @@
+.app-icon-container {
+  top: 50%;
+}
+
+.img-block {
+  width: 50%;
+  z-index: 1000;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+}
+
+ion-item {
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  height: 34px;
+  border-radius: 4px;
+}
+
+ion-input {
+  margin-top: -16px;
+}
+
+ion-item ion-icon {
+  margin-top: -16px !important;
+  color: #0a4f8b;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: none;
+}
+
+ion-button {
+  --padding-top: 25px;
+  --padding-bottom: 25px;
+  font-size: 13px;
+}
+
+.center {
+  text-align: center;
+}
+
+.sign-up-link {
+  font-size: 16px;
+}
+
+.sign-up-link button {
+  background-color: transparent;
+  color: #111;
+  padding: 0;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.item-has-focus {
+  --highlight-background: none;
+}
+
+.log-icon {
+  margin-right: 8px;
+}
+
+.input-heading {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-div {
+  margin-top: 30px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.btn-text {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+.tour-btn-text {
+  margin-top: 0px;
+  color: #3a3a3a;
+  font-size: 16px;
+}
+
+.login-btn {
+  --padding-bottom: 10px;
+  text-transform: none;
+}
+
+.tour-btn {
+  text-transform: none;
+  --padding-bottom: 10px;
+  --box-shadow: none;
+  --border-width: 1px;
+  border: 1px solid #afafaf8f;
+}
+
+.forgot-pwd {
+  font-size: 14px;
+  color: #323232;
+}
+
+.or-txt {
+  font-size: 13px;
+  color: #b7b7b7;
+  font-weight: bold;
+}
+
+@media only screen and (max-height: 650px) {
+  .form-div {
+    margin-top: -30px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}

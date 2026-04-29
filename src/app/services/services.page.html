@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Services</ion-title>
+    <ion-buttons slot="start">
+      <ion-button shape="round" [routerLink]="['/quicktour']"  >
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="services?.length>0">
+    <ion-card *ngFor="let service of services">
+      <ion-row class="card-row card-top-row">
+        <ion-col size="12" class="ion-text-center">
+          <img src="{{service.serviceImg}}" alt="">
+        </ion-col>
+        <ion-col size="12">
+          <p class="age">{{service.service | titlecase }}</p>
+        </ion-col>
+        <!-- <ion-col size="12">
+          <p class="age">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum lectus mi, eu pulvinar nunc hendrerit at. Etiam sed diam sed ante egestas aliquam. Nulla purus velit, aliquet et lectus at, accumsan luctus orci. Sed rutrum rhoncus elit, ac volutpat ex hendrerit a. Fusce dictum vulputate facilisis. Duis pellentesque, mi aliquam egestas mollis, arcu nisi tempus massa, at imperdiet quam lacus a mi. Aliquam semper tincidunt enim. Aenean luctus, turpis quis auctor ultrices, nibh est auctor velit, id congue mauris d</p>
+        </ion-col> -->
+      </ion-row>
+    </ion-card>
+  </div>
+  <div *ngIf="services?.length==0">
+    <ion-card  class="ion-text-start  data-card " >
+      <ion-row>
+        <ion-col size="12">
+          <p class="date"><b>No Services Added</b> </p>         
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

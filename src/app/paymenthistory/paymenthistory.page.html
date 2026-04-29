@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Payment History</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/quicktour']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="orders">
+    <div *ngIf="userType=='Daycare'">
+  <ion-card *ngFor="let order of orders">
+    <ion-row *ngIf="order.orderid">
+      <ion-col size="12">
+        <p class="name">Order ID: <b>{{order.orderid}}</b> </p>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row class="card-row card-top-row">
+      <ion-col  size="6">
+        <p class="heading">Date</p>
+        <p class="value"><b>{{order.create_date}}</b></p>
+      </ion-col>
+      <ion-col size="6" *ngIf="order.type=='Single'">
+        <p class="heading">Month</p>
+        <p class="value"><b>{{order.from_date|date:'MMM, yyyy'}}</b></p>
+      </ion-col>
+      <ion-col size="6" *ngIf="order.type=='Multiple'">
+        <p class="heading">From Date</p>
+        <p class="value"><b>{{order.from_date|date:'MMM, yyyy'}}</b></p>
+      </ion-col>
+      <ion-col size="6" *ngIf="order.type=='Multiple'">
+        <p class="heading">To Date</p>
+        <p class="value"><b>{{order.to_date|date:'MMM, yyyy'}}</b></p>
+      </ion-col>
+      <ion-col size="6">
+        <p class="heading">Amount</p>
+        <p class="value"><b>₹ {{order.amount}}</b> </p>
+      </ion-col>
+      <ion-col size="6">
+        <p class="heading">Status</p>
+        <p class="value"><b>{{order.status}}</b> </p>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row class="card-row">
+      <ion-col size="5">
+        <p class="heading">Time</p>
+        <p class="value">10 AM</p>
+      </ion-col>
+      <ion-col size="7">
+        <p class="heading">Transaction ID</p>
+        <p class="value">6262111186678</p>
+      </ion-col>
+      
+    </ion-row> -->
+    <!-- <ion-row>
+      <ion-col size="12">
+          <ion-button  shape="round"size="small" class="cancel-btn" expand="block" color="primary"><p>Download invoice</p></ion-button>
+      </ion-col>
+    </ion-row> -->
+  </ion-card>
+</div>
+    <div *ngIf="userType=='Preschool'">
+  <ion-card *ngFor="let order of orders">
+    <ion-row *ngIf="order.orderid">
+      <ion-col size="12" >
+        <p class="name">Order ID: <b>{{order.orderid}}</b> </p>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row class="card-row card-top-row">
+      <ion-col  size="6">
+        <p class="heading">Date</p>
+        <p class="value"><b>{{ConvertTimeStamp(order.created_at)}}</b></p>
+      </ion-col>
+      <ion-col size="6" *ngIf="order.type=='Preschool'">
+        <p class="heading">Month</p>
+        <p class="value"><b>{{order.from_date|date:'MMM, yyyy'}}</b></p>
+      </ion-col>
+      <ion-col size="6">
+        <p class="heading">Amount</p>
+        <p class="value"><b>₹ {{order.amount}}</b> </p>
+      </ion-col>
+      <ion-col size="6">
+        <p class="heading">Status</p>
+        <p class="value"><b>{{order.status}}</b> </p>
+      </ion-col>
+     
+      
+    </ion-row>
+   
+  </ion-card>
+</div>
+</div>
+<div class="margin-ionic homework-slider" *ngIf="!isOrdersAvailable">
+  <ion-slides pager="false" class="slider-card events-slider"  >
+    <ion-slide>
+      <ion-card  class="ion-text-start  data-card w-100" >
+        <ion-row>
+          <ion-col size="12">
+            <p class="date"><b>No Payment History</b> </p>         
+          </ion-col>
+         
+        </ion-row>
+       
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+</ion-content>

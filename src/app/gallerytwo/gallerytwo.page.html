@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="name">{{name|titlecase}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"  (click)="goBack()">
+        <ion-icon name="arrow-back-sharp" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="padding-ionic" *ngIf="images">
+    <ion-row >
+      <ion-col size="6" *ngFor="let image of images">
+        <ion-img *ngIf="image.image" src="{{image.image}}" (click)="viewImage(image.image)"></ion-img>
+        <div class="frame-div" *ngIf="image.video">
+          <iframe class="responsive-iframe" [src]="sanitizer.bypassSecurityTrustResourceUrl(image.video)"  target="_parent" allowfullscreen></iframe>
+        </div>
+        <br>
+        <ion-item (click)="download(image.image)" *ngIf="image.image">
+          <ion-icon name="download-outline" ></ion-icon>
+          <ion-label>Download</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

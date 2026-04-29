@@ -1,0 +1,246 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round" (click)="dismiss()">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngIf="userType=='Preschool'">
+  <form [formGroup]="preschoolUpdateForm" (ngSubmit)="onPreschoolSubmit(preschoolUpdateForm.value)">
+
+    <div class="margin-ionic">
+     
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Child's Name <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="child_name"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(child_name?.invalid && child_name?.touched) || child_name?.dirty">
+            <small *ngIf="child_name.errors?.pattern" class="text-danger">Enter a valid child name</small>
+          </div>
+        </ion-col>
+      </ion-row>
+     
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Gender <span class="text-danger">*</span></ion-label>
+
+          <ion-radio-group allowEmptySelection="false" color="primary" formControlName="gender">
+            <ion-row>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Boy"></ion-radio>
+                  <ion-label>Boy</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Girl"></ion-radio>
+                  <ion-label>Girl</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Other"></ion-radio>
+                  <ion-label>Other</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label>Child's DOB <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-datetime displayFormat="DD MMM  YYYY" formControlName="d_o_b" max="{{todays_date}}"></ion-datetime>
+
+          </ion-item>
+        </ion-col>
+     
+
+      
+        <!-- <ion-col size="12">
+          <p class="heading">Admission Seeking For <span class="text-danger">*</span></p>
+          <ion-radio-group allowEmptySelection="false" color="primary" formControlName="class">
+            <ion-row>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Playgroup"></ion-radio>
+                  <ion-label>Play Group</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Nursery 1"></ion-radio>
+                  <ion-label>Nursery 1</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Nursery 2"></ion-radio>
+                  <ion-label>Nursery 2</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Jr. KG"></ion-radio>
+                  <ion-label>Jr.Kg</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Sr. KG"></ion-radio>
+                  <ion-label>Sr.Kg</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </ion-col> -->
+        <ion-col size="12">
+          <ion-label>
+            Child's Picture
+            <span class="text-danger">*</span>
+          </ion-label>
+          <br>
+          <img src="{{childbase64Image}}"  *ngIf="childbase64Image" alt="Avatar" width="215" />
+          <img src="{{child_image}}"  *ngIf="child_image &&  !childbase64Image" alt="Avatar" width="215" />
+          <ion-item lines="none">
+            <ion-button shape="round" class="choose-btn" size="small" (click)="presentActionSheet()">
+              Choose File
+            </ion-button>
+          </ion-item>
+        </ion-col>
+
+
+      </ion-row>
+
+      <br>
+
+
+      <br>
+      <br>
+        
+      <div class="ion-text-center">
+          <ion-button shape="round" type="submit" [disabled]="preschoolUpdateForm.invalid" color="primary">
+            Submit
+          </ion-button>
+        </div>
+    </div>
+
+  </form>
+</div>
+<div *ngIf="userType=='Daycare'">
+  <form [formGroup]="DaycareUpdateForm" (ngSubmit)="onDaycareSubmit(DaycareUpdateForm.value)">
+
+
+    <div class="margin-ionic" >
+    
+     
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Child's Name <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="daycare_child_name" type="text"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(daycare_child_name?.invalid && daycare_child_name?.touched) || daycare_child_name?.dirty">
+            <small *ngIf="daycare_child_name.errors?.pattern" class="text-danger">Enter a valid child name</small>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <br>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Gender <span class="text-danger">*</span></ion-label>
+  
+          <ion-radio-group allowEmptySelection="false" color="primary" formControlName="daycare_gender">
+            <ion-row>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Boy"></ion-radio>
+                  <ion-label>Boy</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Girl"></ion-radio>
+                  <ion-label>Girl</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Other"></ion-radio>
+                  <ion-label>Other</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Child's DOB <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-datetime displayFormat="DD MMM  YYYY" formControlName="daycare_d_o_b" max="2021"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      
+     
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>
+            Email ID <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="daycare_emailid" type="text"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(daycare_emailid?.invalid && daycare_emailid?.touched) || daycare_emailid?.dirty">
+            <small *ngIf="daycare_emailid.errors?.pattern" class="text-danger">Enter a valid email id</small>
+          </div>
+        </ion-col>
+     
+  
+      </ion-row>
+      <ion-label>Home Address <span class="text-danger">*</span></ion-label>
+      <ion-item lines="none">
+        <ion-textarea rows="6" cols="20" formControlName="daycare_address"></ion-textarea>
+      </ion-item>
+   
+     
+    
+    </div>
+
+    <div class="margin-ionic" >
+      <ion-row>
+        <ion-col size="6">
+          <ion-label>
+            Child's Picture <span class="text-danger">*</span></ion-label>
+            <br>
+            <img  class="img-size" *ngIf="childbase64Image" src="{{childbase64Image}}" alt="" class="image_container">
+            <img  class="img-size" *ngIf="child_image && !childbase64Image" src="{{child_image}}" alt="" class="image_container">
+          <ion-item lines="none">
+            <ion-button (click)="presentActionSheet()" shape="round" class="choose-btn" size="small" >
+              Choose File
+             </ion-button>
+             
+          </ion-item>
+        </ion-col>
+       
+  
+      </ion-row>
+      <div class="ion-text-center">
+        <ion-button shape="round" type="submit" [disabled]="DaycareUpdateForm.invalid" color="primary">
+          Submit
+        </ion-button>
+      </div>
+    </div>
+  </form>
+</div>
+</ion-content>

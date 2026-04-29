@@ -1,0 +1,152 @@
+ion-content {
+  --background: #f3fbfe;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.restrict_div {
+  background: #0ea4d9;
+}
+
+.edit_div {
+  background: #00c35c;
+}
+
+.delete_div {
+  background: #ff3131;
+}
+
+img {
+  width: 18%;
+  margin-top: 5px;
+}
+
+ion-card {
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0), 0 2px 4px 2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.11);
+  padding: 8px;
+}
+
+.card-row {
+  padding: 12px;
+  padding-bottom: 7px;
+  padding-right: 16px;
+}
+
+.card-top-row {
+  padding: 0;
+}
+
+hr {
+  border-top: 1px dotted #9d9fa6;
+  margin-left: -18px;
+  margin-right: 10px;
+}
+
+.header {
+  color: #9d9fa6;
+  margin-top: 0;
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.value {
+  color: #202020;
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.view-btn {
+  margin-top: 0;
+  text-transform: none;
+}
+
+.age {
+  font-size: 16px;
+  color: #202020;
+  margin-top: 6px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.view-txt {
+  font-size: 10px;
+}
+
+.data-row ion-col {
+  padding-left: 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.date {
+  margin-left: 8px;
+  color: #202020;
+}
+
+ion-fab {
+  margin-bottom: 0%;
+  margin-right: 2%;
+}
+ion-fab ion-fab-button {
+  width: 40px;
+  height: 40px;
+}
+
+.heading-1 {
+  color: #676767;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.heading {
+  color: #9b9ca6;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+ion-label {
+  color: #9b9ca6;
+  font-size: 14px;
+}
+
+ion-input {
+  border: 1px solid #9b9ca6;
+  border-radius: 5px;
+  --padding-start: 5px !important;
+  height: 35px;
+}
+
+ion-textarea {
+  border: 1px solid #9b9ca6;
+  border-radius: 5px;
+  --padding-start: 5px !important;
+}
+
+ion-datetime {
+  border: 1px solid #9b9ca6;
+  border-radius: 5px;
+  --padding-start: 5px !important;
+  width: 100%;
+  height: 35px;
+}
+
+ion-item {
+  --padding-start: 0;
+  --ripple-color: transparent;
+  --background-activated: transparent;
+  --background-activated-opacity:transparent;
+  --background-focused: transparent;
+  --background-focused-opacity:transparent;
+  --background-hover: transparent;
+  --background-hover-opacity:transparent;
+}
+ion-item ion-label {
+  font-size: 12px;
+  color: #9b9ca6;
+}

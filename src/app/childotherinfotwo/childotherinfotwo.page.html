@@ -1,0 +1,144 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Daycare Registration Form</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/childotherinfo']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ 
+
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" (click)="toggle_accordion()" class="toggle_button">
+    <ion-label>Consent Form</ion-label>
+    <ion-icon slot="end" color="primary" name="chevron-up-circle-outline" *ngIf="!accordion_expanded"></ion-icon>
+    <ion-icon slot="end" color="primary" name="chevron-down-circle-outline" *ngIf="accordion_expanded"></ion-icon>
+  </ion-item>
+
+
+  <div #accordion class='accordion-container' [style.maxHeight.px]="250" [class.collapsed]="!accordion_expanded">
+    <div class="reusable_accordion template_accordion">
+      <ol class="list-group vertical-steps" style="margin-top: 0;list-style: none;padding-left: 28px;">
+        <li class="list-group-item step-active" [routerLink]="['/addadmission']" routerLinkActive="router-link-active" ><span>Daycare Registration</span></li>
+        <li class="list-group-item step-active" [routerLink]="['/childprofile']"><span>Child's Enviroment & Child's medical record</span></li>
+        <li class="list-group-item step-active" [routerLink]="['/childotherinfo']" routerLinkActive="router-link-active" ><span>Food Habits ,Toilet Habits & Speech and Physical Growth</span></li>
+        <li class="list-group-item final" ><span>Consent Form</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="margin-ionic">
+
+<form [formGroup]="stepFourForm" (ngSubmit)="onSubmit(stepFourForm.value)">
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Name <span class="text-danger">*</span></ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q1_ans"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q1_ans?.invalid && q1_ans?.touched) || q1_ans?.dirty">
+          <small *ngIf="q1_ans.errors?.pattern" class="text-danger">Enter a valid name</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Relationship </ion-label>
+        <ion-item lines="none" >
+          <ion-input type="text" formControlName="q2_ans"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q2_ans?.invalid && q2_ans?.touched) || q2_ans?.dirty">
+          <small *ngIf="q2_ans.errors?.pattern" class="text-danger">Enter a valid relationship</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-label>Address </ion-label>
+    <ion-item lines="none">
+      <ion-textarea rows="6" cols="20" formControlName="q3_ans"></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Image </ion-label>
+        <br>
+        <img  class="img-size" *ngIf="image1base64Image" src="{{image1base64Image}}" alt="" class="image_container">
+        <img  class="img-size" *ngIf="img1 && !image1base64Image" src="{{img1}}" alt="" class="image_container">
+        
+        <ion-item lines="none">
+        <ion-button (click)="presentActionSheet('image1')" shape="round" class="choose-btn" size="small" >
+          Choose File
+         </ion-button>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Phone </ion-label>
+        <ion-item lines="none" >
+          <ion-input type="tel" formControlName="q5_ans" maxlength="10"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q5_ans?.invalid && q5_ans?.touched) || q5_ans?.dirty">
+          <small *ngIf="q5_ans.errors?.pattern" class="text-danger">Enter a valid phone number</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Name </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q6_ans"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q6_ans?.invalid && q6_ans?.touched) || q6_ans?.dirty">
+          <small *ngIf="q6_ans.errors?.pattern" class="text-danger">Enter a valid name</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Relationship </ion-label>
+        <ion-item lines="none" >
+          <ion-input type="text" formControlName="q7_ans"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q7_ans?.invalid && q7_ans?.touched) || q7_ans?.dirty">
+          <small *ngIf="q7_ans.errors?.pattern" class="text-danger">Enter a valid relationship</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-label>Address </ion-label>
+    <ion-item lines="none">
+      <ion-textarea rows="6" cols="20" formControlName="q8_ans"></ion-textarea>
+    </ion-item>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Image </ion-label>
+        <br>
+        <img  class="img-size" *ngIf="image2base64Image" src="{{image2base64Image}}" alt="" class="image_container">
+        <img  class="img-size" *ngIf="img2 && !image2base64Image" src="{{img2}}" alt="" class="image_container">
+        <ion-item lines="none">
+        <ion-button  shape="round" (click)="presentActionSheet('image2')" class="choose-btn" size="small" >
+          Choose File
+         </ion-button>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Phone </ion-label>
+        <ion-item lines="none" >
+          <ion-input type="tel" formControlName="q10_ans" maxlength="10"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(q10_ans?.invalid && q10_ans?.touched) || q10_ans?.dirty">
+          <small *ngIf="q10_ans.errors?.pattern" class="text-danger">Enter a valid phone number</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-label>The following people are not authorized to pick up child </ion-label>
+    <ion-item lines="none" >
+      <ion-input type="text" formControlName="q11_ans" ></ion-input>
+    </ion-item>
+  <br>
+  <ion-row class="admission-row">
+    <ion-col >
+      <ion-button [disabled]="stepFourForm.invalid" type="submit" shape="round"  color="primary">
+       Submit
+      </ion-button>
+    </ion-col>
+   
+  </ion-row>
+</form>
+  </div>
+</ion-content>

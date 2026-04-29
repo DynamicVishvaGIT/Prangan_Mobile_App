@@ -1,0 +1,71 @@
+.app-icon-container {
+    top:50%;
+  
+  }
+  #container {
+    margin-top: 10%;
+  }
+  .img-block {
+    width: 50%;
+    z-index: 1000;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    }
+  ion-item {
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    height: 34px;
+    border-radius: 4px;
+  }
+  ion-input {
+    margin-top: -16px;
+    border-bottom: 1px solid #e1e1e1;
+
+  }
+
+ 
+  ion-button {
+    --padding-top: 25px;
+    --padding-bottom: 25px;
+    font-size: 13px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  
+  
+  .item-has-focus {
+    --highlight-background: none;
+  }
+  .log-icon {
+    margin-right: 8px;
+  }
+
+
+  .btn-text{
+    margin-top: 0;
+    font-size: 16px;
+  }
+
+  .login-btn{
+    --padding-bottom: 10px;
+    text-transform: none;
+  }
+
+ 
+
+
+  .terms {
+      color: #202020;
+      font-size: 12px;
+  }
+  ion-item.item-has-focus {
+    .position-label-inside {
+      animation-name: slide-out;
+      animation-duration: 1s;
+      padding-left: 0!important;
+    }
+  }

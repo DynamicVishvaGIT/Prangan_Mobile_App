@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Schedule</ion-title>
+    <ion-buttons slot="start">
+      <ion-button shape="round"  [routerLink]="['/quicktour']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <super-tabs>
+    <super-tabs-toolbar slot="top" >
+      <super-tab-button >
+        <ion-label>Playgroup</ion-label>    
+      </super-tab-button>
+      <super-tab-button>
+        <ion-label>Daycare</ion-label>    
+      </super-tab-button>
+    </super-tabs-toolbar>
+    <super-tabs-container>
+      <super-tab>
+        <ion-content>
+          <p class="month">February 2022</p>  
+        <ion-card>
+          <p class="schedule_heading">Maths</p>
+          <p>Date : 05-02-2022</p>
+          <p>Time : 09:00 AM - 11:00 AM </p>
+        </ion-card>  
+        <ion-card>
+          <p class="schedule_heading">English</p>
+          <p>Date : 05-02-2022</p>
+          <p>Time : 11:00 AM - 01:00 PM </p>
+        </ion-card>  
+        <ion-card>
+          <p class="schedule_heading">Lunch</p>
+          <p>Date : 05-02-2022</p>
+          <p>Time : 01:00 PM </p>
+        </ion-card>  
+        </ion-content>
+      </super-tab>
+      <super-tab>
+        <ion-content>
+          <p class="month">February 2022</p>  
+          <ion-card>
+            <p class="schedule_heading">Geography</p>
+            <p>Date : 05-02-2022</p>
+            <p>Time : 09:00 AM - 11:00 AM </p>
+          </ion-card>  
+          <ion-card>
+            <p class="schedule_heading">English</p>
+            <p>Date : 05-02-2022</p>
+            <p>Time : 11:00 AM - 01:00 PM </p>
+          </ion-card>  
+          <ion-card>
+            <p class="schedule_heading">Lunch</p>
+            <p>Date : 05-02-2022</p>
+            <p>Time : 01:00 PM - 02:00 PM</p>
+          </ion-card> 
+        </ion-content> 
+      </super-tab>
+    </super-tabs-container>
+  </super-tabs>
+</ion-content>

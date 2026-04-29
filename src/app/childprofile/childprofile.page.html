@@ -1,0 +1,321 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Daycare Registration Form</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/addadmission']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" (click)="this.toggle_accordion()" class="toggle_button">
+    <ion-label>Childs Enviroment & Child's medical record</ion-label>
+    <ion-icon slot="end" color="primary" name="chevron-up-circle-outline" *ngIf="!accordion_expanded"></ion-icon>
+    <ion-icon slot="end" color="primary" name="chevron-down-circle-outline" *ngIf="accordion_expanded"></ion-icon>
+  </ion-item>
+
+
+  <div #accordion class='accordion-container' [style.maxHeight.px]="250" [class.collapsed]="!this.accordion_expanded">
+    <div class="reusable_accordion template_accordion">
+      <ol class="list-group vertical-steps" style="margin-top: 0;list-style: none;padding-left: 28px;">
+        <li class="list-group-item step-active" [routerLink]="['/addadmission']" routerLinkActive="router-link-active" ><span>Daycare Registration</span></li>
+        <li class="list-group-item step-active" ><span>Child's Enviroment & Child's medical record</span></li>
+        <li class="list-group-item" [routerLink]="['/childotherinfo']" routerLinkActive="router-link-active" ><span>Food Habits ,Toilet Habits & Speech and Physical Growth</span></li>
+        <li class="list-group-item final" [routerLink]="['/childotherinfotwo']"><span>Consent Form</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="margin-ionic">
+<form [formGroup]="steptwoForm" (ngSubmit)="onSubmit(steptwoForm.value)">
+    <p class="header-1"><b>Child's Environment</b> </p>
+    <p class="heading">Does the child have a separate room ? <span class="text-danger">*</span></p>
+    
+    <ion-radio-group formControlName="q1" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-radio value="Yes"></ion-radio>
+            <ion-label>Yes</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-radio value="No"></ion-radio>
+            <ion-label>No</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <p class="heading">Does the child have playgroup experience ? </p>
+    
+    <ion-radio-group formControlName="q2" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-radio value="Yes"></ion-radio>
+            <ion-label>Yes</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-radio value="No"></ion-radio>
+            <ion-label>No</ion-label>
+          </ion-item>
+        </ion-col>
+      
+      </ion-row>
+    </ion-radio-group>
+    <ion-row>
+      <ion-col >
+        <ion-label>Specify </ion-label>
+        <ion-item lines="none">
+          <ion-input formControlName="q2_ans" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-label>Does the child have neighborhood playmates ? </ion-label>
+    <ion-label>Specify </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q3"></ion-input>
+    </ion-item>
+    <ion-label>When and with whom does the child watch TV ? </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q4"></ion-input>
+    </ion-item>
+    <p class="heading">Does the child prefer to play ? </p>
+    <ion-radio-group formControlName="q5" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="alone"></ion-radio>
+            <ion-label>Alone</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="with playments"></ion-radio>
+            <ion-label>With playmates</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="with siblings"></ion-radio>
+            <ion-label>With siblings</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="with adults"></ion-radio>
+            <ion-label>With adults</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Does the child have any pets ? </ion-label>
+        <ion-radio-group formControlName="q6" allowEmptySelection="false" color="primary">
+          <ion-row>
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="Yes"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="No"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>If yes, please specify </ion-label>
+        <br>
+        <ion-item lines="none" class="specify-item">
+          <ion-input formControlName="q6_ans" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>What is child's favourite indoor activity ? </ion-label>
+        <ion-item lines="none">
+          <ion-input formControlName="q7" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>List child's favourite outdoor activity </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q8"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-label>List the child's favourite toys, play equipments and books </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q9"></ion-input>
+    </ion-item>
+    <p class="header-1"><b>Child's Medical Record</b></p>
+    <br>
+    <ion-label>Pediatrician's Name </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q1_med"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(q1_med?.invalid && q1_med?.touched) || q1_med?.dirty">
+      <small *ngIf="q1_med.errors?.pattern" class="text-danger">Enter a valid pediatrician's name</small>
+    </div>
+    <br>
+    <ion-label>Address </ion-label>
+    <ion-item lines="none">
+      <ion-textarea rows="6" cols="20" formControlName="q2_med"></ion-textarea>
+    </ion-item>
+    <br>
+    <ion-label>Telephone No. </ion-label>
+    <ion-item lines="none">
+    <ion-input type="tel" formControlName="q3_med" maxlength="10"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(q3_med?.invalid && q3_med?.touched) || q3_med?.dirty">
+      <small *ngIf="q3_med.errors?.pattern" class="text-danger">Enter a valid telephone number</small>
+    </div>
+    <br> 
+   
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Does your child have any allergies? 
+        </ion-label>
+        <ion-radio-group formControlName="q4_med" allowEmptySelection="false" color="primary">
+          <ion-row>
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="Yes"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item lines="none">
+                <ion-radio value="No"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>If yes, please specify </ion-label>
+        <br>
+        <ion-item lines="none" class="specify-item">
+          <ion-input type="text" formControlName="q4_med_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <p class="heading">How does the allergies usually manifest itself ? </p>
+    <ion-radio-group allowEmptySelection="false" formControlName="q5_med_ans" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Hives"></ion-radio>
+            <ion-label>Hives</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Asthma"></ion-radio>
+            <ion-label>Asthma</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Rashes"></ion-radio>
+            <ion-label>Rashes</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="other"></ion-radio>
+            <ion-label>Other</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <ion-label>Special instruction in case of an allergic reaction </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q6_med"></ion-input>
+    </ion-item>
+    <ion-label>Does the child run fever easily ? </ion-label>
+    <ion-radio-group allowEmptySelection="false" formControlName="q7_med" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Yes"></ion-radio>
+            <ion-label>Yes</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="No"></ion-radio>
+            <ion-label>No</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <p class="heading">Is your child prone to :</p>
+    <ion-radio-group formControlName="q8_med" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col size="5">
+          <ion-item lines="none">
+            <ion-radio value="Stomach Update"></ion-radio>
+            <ion-label>Stomach Upset</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item lines="none">
+            <ion-radio value="Cold"></ion-radio>
+            <ion-label>Cold</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item lines="none">
+            <ion-radio value="Cough"></ion-radio>
+            <ion-label>Cough</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item lines="none">
+            <ion-radio value="Sore Throat"></ion-radio>
+            <ion-label>Sore throat</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="5">
+          <ion-item lines="none">
+            <ion-radio value="Ear Aches"></ion-radio>
+            <ion-label>Ear ache </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <ion-label>Are there any special family circumstance which may be a factor in your child's present behaviour ?(Divorce, New baby, Moving of house,Hospitalization etc) </ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q9_med"></ion-input>
+    </ion-item>
+    <ion-row class="admission-row">
+      <ion-col >
+        <ion-button type="submit" shape="round" [disabled]="steptwoForm.invalid"  color="primary">
+         Submit
+        </ion-button>
+      </ion-col>
+      <ion-col class="next-btn-col">
+        <ion-button (click)="goToNextStep()" [disabled]="!isFormSubmitted"  shape="round"  color="secondary">
+          Next
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  </div>
+</ion-content>

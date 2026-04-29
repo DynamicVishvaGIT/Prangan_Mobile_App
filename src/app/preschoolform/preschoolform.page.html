@@ -1,0 +1,257 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Preschool Admission Form</ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-button shape="round" (click)="goBack()">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-row class="ion-text-center margin-ionic-top wrap" *ngIf="isLoggedIn && userType=='Preschool'">
+    <ion-col size="4">
+      <div class="icon-circle active ">
+        <ion-icon name="ellipse" class="dot"></ion-icon>
+      </div>
+      <p class="color-red ">Preschool Registration</p>
+    </ion-col>
+    <ion-col size="4" (click)="goToStep2()">
+      <div class="icon-circle "  >
+      </div>
+      <p class="color-red heading-3"  >Parents Info</p>
+
+    </ion-col>
+
+    <ion-col size="4" (click)="goToStep3()">
+      <div class="icon-circle "  >
+      </div>
+      <p class="color-red heading-3" > Additional Information</p>
+
+    </ion-col>
+  </ion-row> 
+  <br>
+  <form [formGroup]="preschoolRegForm" (ngSubmit)="onSubmit(preschoolRegForm.value)">
+
+    <div class="margin-ionic">
+      <p class="heading-1">Prangan Centres <span class="text-danger">*</span></p>
+      <ion-radio-group allowEmptySelection="false" color="primary" formControlName="branch_id" >
+        <ion-row *ngIf="branches">
+          <ion-col *ngFor="let branch of branches">
+            <ion-item lines="none">
+              <ion-radio value="{{branch.id}}" [disabled]="isLoggedIn && userType=='Preschool'"></ion-radio>
+              <ion-label>{{branch.branch_name}}</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-radio-group>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Child's Name <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="child_name"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(child_name?.invalid && child_name?.touched) || child_name?.dirty">
+            <small *ngIf="child_name.errors?.pattern" class="text-danger">Enter a valid child name</small>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-label>Pet Name </ion-label>
+      <ion-item lines="none">
+        <ion-input formControlName="pet_name" type="text"></ion-input>
+      </ion-item>
+      <div class="error-div" *ngIf="(pet_name?.invalid && pet_name?.touched) || pet_name?.dirty">
+        <small *ngIf="pet_name.errors?.pattern" class="text-danger">Enter a valid pet name</small>
+      </div>
+      <br>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Gender <span class="text-danger">*</span></ion-label>
+
+          <ion-radio-group allowEmptySelection="false" color="primary" formControlName="gender">
+            <ion-row>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Boy"></ion-radio>
+                  <ion-label>Boy</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Girl"></ion-radio>
+                  <ion-label>Girl</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Other"></ion-radio>
+                  <ion-label>Other</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-radio-group>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>Child's DOB <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-datetime displayFormat="DD MMM  YYYY" formControlName="d_o_b" max="{{todays_date}}"></ion-datetime>
+
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col size="6">
+          <ion-label>In Words <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="dob_words" type="text"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(dob_words?.invalid && dob_words?.touched) || dob_words?.dirty">
+            <small *ngIf="dob_words.errors?.pattern" class="text-danger">Enter a valid DOB in words</small>
+          </div>
+        </ion-col> -->
+        <!-- <ion-col size="6">
+          <ion-label>In Figures <span class="text-danger">*</span></ion-label>
+          <br>
+          <ion-label>e.g. 20-07-19</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="figures" type="text"></ion-input>
+          </ion-item>
+        </ion-col> -->
+
+
+        <ion-col size="6">
+          <ion-label>Residence Mobile Number <span class="text-danger">*</span></ion-label>
+          <ion-label>(For Login)</ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="mobile_1" type="tel" maxlength="10" [disabled]="isDisabled"></ion-input>
+
+          </ion-item>
+          <div class="error-div" *ngIf="(mobile_1?.invalid && mobile_1?.touched) || mobile_1?.dirty">
+            <small *ngIf="mobile_1.errors?.pattern" class="text-danger">Enter a valid residence mobile number</small>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>Emergency Phone <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input formControlName="mobile_2" type="tel" maxLength="10"></ion-input>
+
+          </ion-item>
+          <div class="error-div" *ngIf="(mobile_2?.invalid && mobile_2?.touched) || mobile_2?.dirty">
+            <small *ngIf="mobile_2.errors?.pattern" class="text-danger">Enter a valid  phone number</small>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>Mother Tongue <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="mother_tonge"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(mother_tonge?.invalid && mother_tonge?.touched) || mother_tonge?.dirty">
+            <small *ngIf="mother_tonge.errors?.pattern" class="text-danger">Enter a valid mother tounge</small>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>Other Languages Spoken <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="other_languages"></ion-input>
+          </ion-item>
+          <div class="error-div"
+            *ngIf="(other_languages?.invalid && other_languages?.touched) || other_languages?.dirty">
+            <small *ngIf="other_languages.errors?.pattern" class="text-danger">Enter a valid language</small>
+          </div>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label>Nationaity <span class="text-danger">*</span></ion-label>
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="nationality"></ion-input>
+          </ion-item>
+          <div class="error-div" *ngIf="(nationality?.invalid && nationality?.touched) || nationality?.dirty">
+            <small *ngIf="nationality.errors?.pattern" class="text-danger">Enter a valid nationality</small>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <p class="heading">Admission Seeking For <span class="text-danger">*</span></p>
+          <ion-radio-group allowEmptySelection="false" color="primary" formControlName="class">
+            <ion-row *ngIf="columns">
+              <ion-col size="4" *ngFor="let item of columns">
+                <ion-item lines="none">
+                  <ion-radio value="{{item.name}}"></ion-radio>
+                  <ion-label>{{item.name |titlecase}}</ion-label>
+                </ion-item>
+              </ion-col>
+              <!-- <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Nursery 1"></ion-radio>
+                  <ion-label>Nursery 1</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Nursery 2"></ion-radio>
+                  <ion-label>Nursery 2</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Jr. KG"></ion-radio>
+                  <ion-label>Jr.Kg</ion-label>
+                </ion-item>
+              </ion-col>
+              <ion-col size="4">
+                <ion-item lines="none">
+                  <ion-radio value="Sr. KG"></ion-radio>
+                  <ion-label>Sr.Kg</ion-label>
+                </ion-item>
+              </ion-col> -->
+            </ion-row>
+          </ion-radio-group>
+        </ion-col>
+        <ion-col size="12">
+          <ion-label>
+            Child's Picture
+            <span class="text-danger">*</span>
+          </ion-label>
+          <br>
+          <img src="{{childbase64Image}}"  *ngIf="childbase64Image" alt="Avatar" width="215" />
+          <img src="{{child_image}}"  *ngIf="child_image && isLoggedIn &&  !childbase64Image" alt="Avatar" width="215" />
+          <ion-item lines="none">
+            <ion-button shape="round" class="choose-btn" size="small" (click)="presentActionSheet()">
+              Choose File
+            </ion-button>
+          </ion-item>
+        </ion-col>
+
+
+      </ion-row>
+
+      <br>
+
+
+      <br>
+      <br>
+      <ion-row class="admission-row">
+      
+        <ion-col size="6">
+          <ion-button shape="round" type="button" (click)="goToStep2()" [disabled]="!isFormSubmitted && isLoggedIn && userType=='Preschool'" color="primary">
+            Next
+          </ion-button>
+        </ion-col>
+        <ion-col  size="6">
+          <ion-button shape="round" type="submit" [disabled]="!preschoolRegForm.valid" color="primary">
+            Submit
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+  </form>
+
+</ion-content>

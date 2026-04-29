@@ -1,0 +1,14 @@
+ion-content {
+  --background: #f3fbfe;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+ion-card {
+  margin: 16px;
+  border-radius: 5px;
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0), 0 2px 4px 2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.11);
+  padding: 8px;
+}

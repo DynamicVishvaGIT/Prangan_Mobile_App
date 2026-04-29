@@ -1,0 +1,261 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Preschool Addmission Form</ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/preschoolform']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+ 
+
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center margin-ionic-top wrap">
+    <ion-col size="4">
+      <!-- <div class="active "> -->
+        <ion-icon [routerLink]="['/preschoolform']" name="checkmark-circle" class="checkmark" size="large" color="success"></ion-icon>
+      <!-- </div> -->
+      <p  [routerLink]="['/preschoolform']" class="color-green" >Preschool Registration</p>
+    </ion-col>
+    <ion-col size="4">
+      <img src="../../assets/dashboard/checkmark.png" alt="">
+      <p class="color-green" >Parents Info</p>
+    </ion-col>
+
+    <ion-col size="4" (click)="goToStep3()">
+      <div class="icon-circle " >
+        <ion-icon name="ellipse" class="dot"></ion-icon>
+      </div>
+      <p class="color-red heading-3" >Additional Information</p>
+    </ion-col>
+  </ion-row>
+  <div class="margin-ionic">
+<form [formGroup]="preschoolRegTwoForm" (ngSubmit)="onSubmit(preschoolRegTwoForm.value)">
+   
+
+    <ion-label>Father's Name <span class="text-danger">*</span></ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="dad_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(dad_name?.invalid && dad_name?.touched) || dad_name?.dirty">
+      <small *ngIf="dad_name.errors?.pattern" class="text-danger">Enter a valid name</small>
+    </div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Father's Qualification </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="dad_education"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Father's Occupation / Profession </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="dad_occupationn"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(dad_occupationn?.invalid && dad_occupationn?.touched) || dad_occupationn?.dirty">
+          <small *ngIf="dad_occupationn.errors?.pattern" class="text-danger">Enter a valid occupation / profession</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Father's Mobile Number </ion-label>
+        <ion-item lines="none">
+          <ion-input type="tel" maxLength="10"  formControlName="dad_cell_no"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(dad_cell_no?.invalid && dad_cell_no?.touched) || dad_cell_no?.dirty">
+          <small *ngIf="dad_cell_no.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Father's Email </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="dad_email"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(dad_email?.invalid && dad_email?.touched) || dad_email?.dirty">
+          <small *ngIf="dad_email.errors?.pattern" class="text-danger">Enter a valid email</small>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-label>Mother's Name <span class="text-danger">*</span></ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="mom_name"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(mom_name?.invalid && mom_name?.touched) || mom_name?.dirty">
+      <small *ngIf="mom_name.errors?.pattern" class="text-danger">Enter a valid name</small>
+    </div>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Mother's Qualification </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="mom_education"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Mother's Occupation / Profession </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="mom_occupation"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(mom_occupation?.invalid && mom_occupation?.touched) || mom_occupation?.dirty">
+          <small *ngIf="mom_occupation.errors?.pattern" class="text-danger">Enter a valid occupation / profession</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Mother's Mobile Number </ion-label>
+        <ion-item lines="none">
+          <ion-input type="tel" maxLength="10" formControlName="mom_cell_no"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(mom_cell_no?.invalid && mom_cell_no?.touched) || mom_cell_no?.dirty">
+          <small *ngIf="mom_cell_no.errors?.pattern" class="text-danger">Enter a valid mobile number</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Mother's Email </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="mom_email"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(mom_email?.invalid && mom_email?.touched) || mom_email?.dirty">
+          <small *ngIf="mom_email.errors?.pattern" class="text-danger">Enter a valid email</small>
+        </div>
+      </ion-col>
+  
+    </ion-row>
+    <ion-label class="heading-1">Siblings of the child </ion-label>
+<ion-row>
+  <ion-col size="12">
+    <ion-label>Name </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child1"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(child1?.invalid && child1?.touched) || child1?.dirty">
+      <small *ngIf="child1.errors?.pattern" class="text-danger">Enter a valid name</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>School </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child_school_1"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>Class </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child_class1"></ion-input>
+    </ion-item>
+  </ion-col>
+  
+</ion-row>
+<ion-row>
+  <ion-col size="12">
+    <ion-label>Name </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child2"></ion-input>
+    </ion-item>
+    <div class="error-div" *ngIf="(child2?.invalid && child2?.touched) || child2?.dirty">
+      <small *ngIf="child2.errors?.pattern" class="text-danger">Enter a valid name</small>
+    </div>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>School </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child_school_2"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col size="6">
+    <ion-label>Class </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="child_class2"></ion-input>
+    </ion-item>
+  </ion-col>
+  
+</ion-row>
+<ion-label class="heading-1">Other Family Members At Home</ion-label>
+
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Name </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="other_name1"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(other_name1?.invalid && other_name1?.touched) || other_name1?.dirty">
+          <small *ngIf="other_name1.errors?.pattern" class="text-danger">Enter a valid name</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>Relationship </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="other_rel1"></ion-input>
+        </ion-item>
+        <div class="error-div" *ngIf="(other_rel1?.invalid && other_rel1?.touched) || other_rel1?.dirty">
+          <small *ngIf="other_rel1.errors?.pattern" class="text-danger">Enter a valid relationship</small>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+      <ion-label>Name </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="other_name2"></ion-input>
+      </ion-item>
+      <div class="error-div" *ngIf="(other_name2?.invalid && other_name2?.touched) || other_name2?.dirty">
+        <small *ngIf="other_name2.errors?.pattern" class="text-danger">Enter a valid name</small>
+      </div>
+      </ion-col>
+      <ion-col size="6">
+      <ion-label>Relationship </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="other_rel2"></ion-input>
+      </ion-item>
+      <div class="error-div" *ngIf="(other_rel2?.invalid && other_rel2?.touched) || other_rel2?.dirty">
+        <small *ngIf="other_rel2.errors?.pattern" class="text-danger">Enter a valid relationship</small>
+      </div>
+      </ion-col>
+      <ion-col size="12">
+      <ion-label>Person attending the child at home </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q1_ans"></ion-input>
+      </ion-item>
+      <div class="error-div" *ngIf="(q1_ans?.invalid && q1_ans?.touched) || q1_ans?.dirty">
+        <small *ngIf="q1_ans.errors?.pattern" class="text-danger">Enter a valid name</small>
+      </div>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Is the child currently attending Prangan Daycare ?</ion-label>
+      
+        <ion-radio-group formControlName="q2" allowEmptySelection="false" color="primary" >
+          <ion-row>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Yes"></ion-radio>
+                <ion-label>Yes</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="No"></ion-radio>
+                <ion-label>No</ion-label>
+              </ion-item>
+            </ion-col>
+       
+          </ion-row>
+        </ion-radio-group>
+      </ion-col>
+
+    </ion-row>
+   
+  <br>
+
+  <div class="ion-text-center">
+  
+      <ion-button shape="round" type="button" (click)="goToStep3()" [disabled]="!isFormSubmitted" color="primary">
+        Next
+      </ion-button>
+      <ion-button [disabled]="preschoolRegTwoForm.invalid" shape="round" type="submit" color="primary">
+        Submit
+      </ion-button>
+   
+  </div>
+</form>  
+  </div>
+</ion-content>

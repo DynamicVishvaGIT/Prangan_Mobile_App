@@ -1,0 +1,169 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="daycare_users">
+    <ion-card *ngFor="let user of daycare_users">
+      <ion-row class="card-row card-top-row daycare_row">
+    
+        <ion-col size="12">
+          <p class="age">{{user.child_name|titlecase}}&nbsp;&nbsp; <span *ngIf="user.Approve_status!='Active'" style="color:red">Approval Pending</span></p>
+          <hr>
+          <ion-row class="data-row">
+            <ion-col size="4">
+              <p class="header">Pet Name</p>
+              <p class="value">{{user.pet_name|titlecase}}</p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="header">Gender</p>
+              <p class="value">{{user.gender|titlecase}}</p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="header">Home Phone</p>
+              <p class="value">{{user.home_phone}}</p>
+            </ion-col>
+           
+          </ion-row>
+          <ion-row  class="data-row">
+            <ion-col size="3">
+            </ion-col>
+            <ion-col size="5">
+            </ion-col>
+            <ion-col size="4">
+              <ion-button *ngIf="user.Approve_status=='Active'"  shape="round" (click)="selectUser(user.id,'Daycare')" size="small" class="view-btn" color="primary"><p class="view-txt">Select user</p></ion-button>
+              <ion-button style="margin-left: -20px;" *ngIf="user.status == 'Active' && user.Approve_status!='Active'"  shape="round" (click)="selectUser(user.id,'Daycare')" size="small" class="view-btn" color="primary"><p class="view-txt">Complete Setup</p></ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+       
+      </ion-row>
+    
+    </ion-card>
+  </div>
+  <div *ngIf="!daycare_users">
+    <ion-card *ngFor="let user of daycare_users">
+      <ion-row class="card-row card-top-row daycare_row">
+    
+        <ion-col size="12">
+          <p class="age"><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+          <hr>
+          <ion-row class="data-row">
+            <ion-col size="4">
+              <p class="header"><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+              <p class="value"><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="header"><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+              <p class="value"><ion-skeleton-text animated style="width: 70%"></ion-skeleton-text></p>
+            </ion-col>
+            <ion-col size="4">
+              <p class="header"><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></p>
+              <p class="value"><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+            </ion-col>
+           
+          </ion-row>
+          <ion-row  class="data-row">
+            <ion-col size="3">
+            </ion-col>
+            <ion-col size="5">
+            </ion-col>
+            <ion-col size="4">
+            </ion-col>
+          </ion-row>
+        </ion-col>
+       
+      </ion-row>
+    
+    </ion-card>
+  </div>
+<div *ngIf="preschool_users">
+  <ion-card *ngFor="let user of preschool_users">
+    <ion-row class="card-row card-top-row preschool_row">
+      <!-- <ion-col size="3" >
+    <img src="{{user.image}}" alt="">
+      </ion-col> -->
+      <ion-col size="12">
+        <p class="age">{{user.child_name|titlecase}}&nbsp;&nbsp; <span *ngIf="user.Approve_status!='Active'" style="color:red">Approval Pending</span></p>
+        <hr>
+        <ion-row class="data-row">
+          <ion-col size="4">
+            <p class="header">Pet Name</p>
+            <p class="value">{{user.pet_name|titlecase}}</p>
+          </ion-col>
+          <ion-col size="4">
+            <p class="header">Gender</p>
+            <p class="value">{{user.gender|titlecase}}</p>
+          </ion-col>
+          <ion-col size="4">
+            <p class="header">Home Phone</p>
+            <p class="value">{{user.residence_phone}}</p>
+          </ion-col>
+          <ion-col size="4">
+            <p class="header">Class</p>
+            <p class="value">{{user.class}}</p>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row  class="data-row">
+          <ion-col size="3">
+           
+          </ion-col>
+          <ion-col size="5">
+           
+          </ion-col>
+          <ion-col size="4">
+            <ion-button *ngIf="user.Approve_status=='Active'"  shape="round" (click)="selectUser(user.id,'Preschool')" size="small" class="view-btn" color="primary"><p class="view-txt">Select user</p></ion-button>
+            <ion-button style="margin-left: -20px;"  *ngIf="user.status == 'Active' && user.Approve_status!='Active'"  shape="round" (click)="selectUser(user.id,'Preschool')" size="small" class="view-btn" color="primary"><p class="view-txt">Complete Setup</p></ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+     
+    </ion-row>
+  
+  </ion-card>
+</div>
+<div *ngIf="!preschool_users">
+  <ion-card *ngFor="let user of daycare_users">
+    <ion-row class="card-row card-top-row daycare_row">
+  
+      <ion-col size="12">
+        <p class="age"><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+        <hr>
+        <ion-row class="data-row">
+          <ion-col size="4">
+            <p class="header"><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+            <p class="value"><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></p>
+          </ion-col>
+          <ion-col size="4">
+            <p class="header"><ion-skeleton-text animated style="width: 40%"></ion-skeleton-text></p>
+            <p class="value"><ion-skeleton-text animated style="width: 70%"></ion-skeleton-text></p>
+          </ion-col>
+          <ion-col size="4">
+            <p class="header"><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></p>
+            <p class="value"><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>
+          </ion-col>
+         
+        </ion-row>
+        <ion-row  class="data-row">
+          <ion-col size="3">
+          </ion-col>
+          <ion-col size="5">
+          </ion-col>
+          <ion-col size="4">
+          </ion-col>
+        </ion-row>
+      </ion-col>
+     
+    </ion-row>
+  
+  </ion-card>
+</div>
+
+ 
+</ion-content>

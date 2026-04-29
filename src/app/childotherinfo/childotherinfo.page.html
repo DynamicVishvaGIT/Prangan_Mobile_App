@@ -1,0 +1,264 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Daycare Registration Form</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/childprofile']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+ 
+
+</ion-header>
+
+<ion-content>
+  <ion-item lines="none" (click)="toggle_accordion()" class="toggle_button">
+    <ion-label  class="ion-text-wrap">Food Habits ,Toilet Habits & Speech and Physical Growth</ion-label>
+    <ion-icon slot="end" color="primary" name="chevron-up-circle-outline" *ngIf="!accordion_expanded"></ion-icon>
+    <ion-icon slot="end" color="primary" name="chevron-down-circle-outline" *ngIf="accordion_expanded"></ion-icon>
+  </ion-item>
+
+
+  <div #accordion class='accordion-container' [style.maxHeight.px]="250" [class.collapsed]="!accordion_expanded">
+    <div class="reusable_accordion template_accordion">
+      <ol class="list-group vertical-steps" style="margin-top: 0;list-style: none;padding-left: 28px;">
+        <li class="list-group-item step-active" [routerLink]="['/addadmission']" routerLinkActive="router-link-active" ><span>Daycare Registration</span></li>
+        <li class="list-group-item step-active" [routerLink]="['/childprofile']"><span>Child's Enviroment & Child's medical record</span></li>
+        <li class="list-group-item step-active"  routerLinkActive="router-link-active" ><span>Food Habits ,Toilet Habits & Speech and Physical Growth</span></li>
+        <li class="list-group-item final" [routerLink]="['/childotherinfotwo']"><span>Consent Form</span></li>
+      </ol>
+    </div>
+  </div>
+  <div class="margin-ionic">
+    <form [formGroup]="stepThreeForm" (ngSubmit)="onSubmit(stepThreeForm.value)">
+    <p class="header-1"><b>Food Habits</b></p>
+    <p class="heading">Would you classify the child  as : <span class="text-danger">*</span></p>
+    <ion-radio-group formControlName="q1" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Good"></ion-radio>
+            <ion-label>Good </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Average"></ion-radio>
+            <ion-label>Average</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Poor Eater"></ion-radio>
+            <ion-label>Poor Eater</ion-label>
+          </ion-item>
+        </ion-col>
+     
+      </ion-row>
+    </ion-radio-group>
+    <p class="heading">Is the child : </p>
+    <ion-radio-group formControlName="q2" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Vegetarian"></ion-radio>
+            <ion-label>Vegetarian </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Eggetarian"></ion-radio>
+            <ion-label>Eggetarian</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Non vegetarian"></ion-radio>
+            <ion-label>Non Vegetarian</ion-label>
+          </ion-item>
+        </ion-col>
+     
+      </ion-row>
+    </ion-radio-group>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>Any special dietary requirements ? </ion-label>
+        <ion-item lines="none">
+          <ion-input formControlName="q3" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-label>For which meal is the child most hungry ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q4"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-label>What is the child most favourite food ? </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="q5"></ion-input>
+    </ion-item>
+    <ion-label>Does the child feed ? </ion-label>
+    <ion-radio-group formControlName="q6" allowEmptySelection="false" color="primary">
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="Himself/herself"></ion-radio>
+            <ion-label>Himself / herself</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-radio value="wait to be fed"></ion-radio>
+            <ion-label>wants to be fed</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-radio-group>
+    <ion-label>What is his/her general attitude towards eating ? </ion-label>
+    <ion-item lines="none">
+      <ion-input type="text" formControlName="q7"></ion-input>
+    </ion-item>
+    <br>
+    <p class="header-1"> <b>Toilet Habits</b>
+    </p>
+<br>
+  <ion-label>Does the child decide when to go to the toilet or is a reminder needed ?  <span class="text-danger">*</span></ion-label>
+  <ion-item lines="none">
+  <ion-input type="text" formControlName="q1_tol"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-label>Word child uses for urination </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q2_tol"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>Bowel movements </ion-label>
+      <ion-item lines="none" >
+        <ion-input type="text" formControlName="q3_tol" class="bowel-input"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-label>Usual time for bowel movements </ion-label>
+  <ion-item lines="none" >
+    <ion-input type="text" formControlName="q4_tol" class="bowel-input"></ion-input>
+  </ion-item>
+  <ion-label>Regular </ion-label>
+  <ion-item lines="none">
+    <ion-input type="text" formControlName="q5_tol"></ion-input>
+  </ion-item>
+  <ion-label>Constipated </ion-label>
+  <ion-item lines="none">
+    <ion-input type="text" formControlName="q6_tol"></ion-input>
+  </ion-item>
+
+ 
+  <ion-label>Willingly goes to toilet </ion-label>
+  <ion-item lines="none">
+    <ion-input type="text" formControlName="q7_tol"></ion-input>
+  </ion-item>
+  <br>
+  <p class="header-1"> <b>Speech and Physical Growth </b>
+  </p>
+  <ion-row>
+    <ion-col size="6">
+      <ion-label>Does he/she talk well ? </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q1_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>Fairly well </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q2_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>Indistinctly </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q3_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>not at all </ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q4_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>Does anyone read to him/her</ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q5_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col size="6">
+      <ion-label>How regularly</ion-label>
+      <ion-item lines="none">
+        <ion-input type="text" formControlName="q6_sp"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <p class="heading">At what age did he/she started : </p>
+  <ion-radio-group allowEmptySelection="false" formControlName="q7_sp" color="primary">
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-radio value="Crawling"></ion-radio>
+          <ion-label>Crawling </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-radio value="walk"></ion-radio>
+          <ion-label>Walk</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+  <p class="heading">Walks without help ? : </p>
+  <ion-radio-group allowEmptySelection="false" formControlName="q8_sp" color="primary">
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-radio value="Yes"></ion-radio>
+          <ion-label>Yes </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-radio value="No"></ion-radio>
+          <ion-label>No</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-radio-group>
+  <ion-label>Sleep through the night 
+  </ion-label>
+  <ion-item lines="none">
+    <ion-input type="text" formControlName="q9_sp"></ion-input>
+  </ion-item>
+  <ion-label>Would you describe you child as active/quite/thin/average weight/heavy/tall/average height,or short: friendlt or not too friendly ? 
+  </ion-label>
+  <ion-item lines="none">
+    <ion-input type="text" formControlName="q10_sp"></ion-input>
+  </ion-item>
+    <ion-row class="admission-row">
+      <ion-col >
+        <ion-button type="submit" [disabled]="stepThreeForm.invalid" shape="round"  color="primary">
+         Submit
+        </ion-button>
+      </ion-col>
+      <ion-col class="next-btn-col">
+        <ion-button  shape="round" [disabled]="!isFormSubmitted" color="secondary">
+          <!-- <ion-button  shape="round" (click)="goToStep3()" [disabled]="!isFormSubmitted" color="secondary"> -->
+          Next
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  </div>
+</ion-content>

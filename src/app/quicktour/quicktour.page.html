@@ -1,0 +1,338 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-content-3"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-content-1"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-content-2"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Prangan</ion-title>
+    <ion-card-subtitle>Preschool and Daycare</ion-card-subtitle>
+    <!-- <ion-icon *ngIf="type !=='quicktour'" [routerLink]="['/notifications']" size="large" style="margin-right:5%" slot="end" name="notifications-outline"></ion-icon> -->
+    <ion-avatar *ngIf="type !=='quicktour'" [routerLink]="['/notifications']" slot="end" >
+      <ion-badge color="danger" style="position: absolute">{{notifications?.length}}</ion-badge>
+      <ion-badge color="danger" style="position: absolute">{{notifications?.length}}</ion-badge>
+      <img style="width: 40px;height:40px;margin-top: 20%;margin-right:10%" src="assets/dashboard/noti.png" />
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+<div  [ngClass]="{'toolbar-div': type !=='quicktour' ,'toolbar-div-2': type =='quicktour','toolbar-div-3': type !=='quicktour' && !attendance}">
+  <p class="margin-ionic-start child-name" *ngIf="type !=='quicktour' && child_name">Welcome, {{child_name |titlecase }}</p>
+  <p class="margin-ionic-start name" *ngIf="type !=='quicktour' && plan">{{classType |titlecase }}</p>
+  <p *ngIf="type =='quicktour'" class="margin-ionic-start name-2" style="margin-top: 8px;">Admission Form</p>
+ 
+  <div class="margin-ionic" *ngIf="type =='quicktour'">
+  <ion-row class="margin-ionic-start">
+    <ion-col size="6">
+      <ion-button class="daycare-btn"  shape="round"[routerLink]="['/addadmission']" expand="block" >
+        Daycare Form
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button class="preschool-btn" shape="round"[routerLink]="['/preschoolform']" expand="block" >
+        Preschool Form
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</div>
+  <ion-card mode="ios"  *ngIf="type !=='quicktour' " >
+    <ion-card-header>
+      <ion-row>
+        <ion-col size="6">
+          <ion-label class="time" *ngIf="in_time">{{in_time|date:'h:mm a'}}</ion-label>
+          <ion-label class="time" *ngIf="!in_time">--</ion-label>
+          <br>
+          <ion-label>Check In</ion-label>
+        </ion-col>
+        <ion-col size="6">
+          <ion-label class="time" *ngIf="out_time">{{out_time|date:'h:mm a'}}</ion-label>
+          <ion-label class="time" *ngIf="!out_time">--</ion-label>
+          <br>
+          <ion-label>Check Out</ion-label>
+        </ion-col>
+      </ion-row>
+      <img src="../../assets/dashboard/clock_icon.png" alt="">
+      <ion-card-subtitle *ngIf="attendance">{{attendance.date|date:'dd MMM,yyyy'}}</ion-card-subtitle>
+      <ion-card-subtitle *ngIf="!attendance">--</ion-card-subtitle>
+    </ion-card-header>
+  
+  </ion-card>
+  <div class="margin-ionic ion-text-center" *ngIf="type =='quicktour'">
+    <ion-button  class="preschool-btn"  shape="round"[routerLink]="['/addinquiry']"  color="primary">
+      Enquiry Form
+    </ion-button>
+    <br>
+  </div>
+  <div *ngIf="type !=='quicktour' && pending_amount && pending_amount!=='0' ">
+    <p class="heading">Pending Payments</p>
+    <div class="margin-ionic homework-slider" >
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" [routerLink]="['/feestructure']" routerLinkActive="router-link-active" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>{{child_name |titlecase }}</b> </p>  
+                <p>Pending Fees</p>
+                <p class="date class_type" *ngIf="pending_amount"><b>₹ {{pending_amount}} </b></p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="{{profile?.child_img}}" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+    
+      </ion-slides>
+    </div>
+  </div>
+  <div *ngIf="type !=='quicktour'">
+    <p class="heading" style="padding-top: 8px;">Holidays</p>
+    <div class="margin-ionic homework-slider" *ngIf="holidays">
+      <ion-slides pager="false" class="slider-card " [options]="sliderOpts" >
+        <ion-slide *ngFor="let holiday of holidays">
+          <ion-card  class="data-card" >
+            <img src="{{holiday.image}}" alt="">
+            <p class="holiday"><b>{{holiday.name}}</b> </p>         
+            <p class="holiday" *ngIf="holiday.from_date==holiday.to_date"><b>{{holiday.from_date}}</b> </p>         
+            <p class="holiday" *ngIf="holiday.from_date!==holiday.to_date"><b>{{holiday.from_date}} - {{holiday.to_date}}</b> </p>         
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="!isHolidayPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>No Holidays</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+           
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="holidays !='' && !isHolidayPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card">
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></b> </p>         
+                <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+  <div>
+    <p class="heading">Events</p>
+    <div class="margin-ionic homework-slider" *ngIf="events">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide *ngFor="let event of events">
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>{{event.name |titlecase}}</b> </p>         
+                <p>{{event.event_date |date:'dd,MMM yyyy'}}</p>
+                <p *ngIf="event.class_type!=='Both'" class="date class_type"><b>{{event.class_type|titlecase}}</b> </p>         
+                <p *ngIf="event.class_type=='Both'" class="date class_type"><b>Preschool and Daycare</b> </p>         
+
+              </ion-col>
+              <ion-col size="5">
+                <img src="{{event.image}}" alt="">
+              </ion-col>
+            </ion-row>
+          
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="!isEventPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>No Events</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+           
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="events!=='' && !isEventPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card">
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></b> </p>         
+                <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+   
+  </div>
+  <div>
+    <p class="heading">Gallery</p>
+    <div class="margin-ionic homework-slider gallery-slider" *ngIf="albums">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide *ngFor="let album of albums">
+          <ion-card  class="ion-text-start  data-card" (click)="openAlbum(album.id,album.name)">
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>{{album.name |titlecase}}</b> </p>  
+                <p>{{album.date |date:'dd,MMM yyyy'}}</p>
+                <p *ngIf="album.class_type!=='Both'" class="date class_type"><b>{{album.class_type|titlecase}}</b> </p>         
+                <!-- <p *ngIf="album.class" class="date class_type"><b>{{album.class|titlecase}}</b> </p>     -->       
+                <p *ngIf="album.class_type=='Both'" class="date class_type"><b>Preschool and Daycare</b> </p>       
+              </ion-col>
+              <ion-col size="5">
+                <img src="{{album.image}}" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="!isAlbumPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>No Gallery</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+           
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="margin-ionic homework-slider" *ngIf="albums !='' && !isAlbumPresent">
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide>
+          <ion-card  class="ion-text-start  data-card">
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b><ion-skeleton-text animated style="width: 60%"></ion-skeleton-text></b> </p>         
+                <p><ion-skeleton-text animated style="width: 80%"></ion-skeleton-text></p>         
+              </ion-col>
+              <ion-col size="5">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+  <div *ngIf="type =='quicktour'">
+    <p class="heading">Courses</p>
+    <div class="margin-ionic homework-slider" >
+      <ion-slides pager="false" class="slider-card events-slider" [options]="eventsliderOpts" >
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>Toddler</b> </p>  
+                <p>Age Criteria</p>
+                <p class="date class_type"><b>12 Months</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="../../assets/courses/01_Toddler.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>Playgroup</b> </p>  
+                <p>Age Criteria</p>
+                <p  class="date class_type"><b>24 Months</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="../../assets/courses/02_Playgroup.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>Nursery</b> </p>  
+                <p>Age Criteria</p>
+                <p  class="date class_type"><b>2.8 Years</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="../../assets/courses/03_Nursery.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>Jr.Kg</b> </p>  
+                <p>Age Criteria</p>
+                <p  class="date class_type"><b>2.8 years</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="../../assets/courses/04_Jr. Kg.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+        <ion-slide >
+          <ion-card  class="ion-text-start  data-card" >
+            <ion-row>
+              <ion-col size="7">
+                <p class="date"><b>Sr.Kg</b> </p>  
+                <p>Age Criteria</p>
+                <p  class="date class_type"><b>2.8 Years</b> </p>         
+              </ion-col>
+              <ion-col size="5">
+                <img src="../../assets/courses/05_Sr. Kg.png" alt="">
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </div>
+
+</div>
+
+</ion-content>

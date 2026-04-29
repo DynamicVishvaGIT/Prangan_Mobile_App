@@ -1,0 +1,29 @@
+ion-content {
+    --background:#f3fbfe;
+  }
+  .img-block {
+    // z-index: 1000;
+    // position: absolute;
+    // top: 2%;
+    // text-align: center;
+    z-index: 1000;
+    position: relative;
+    text-align: center;
+    img{
+        width: 75px;
+    }
+  }
+  .heading {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      color: #8a8a8a;
+  }
+  .value {
+      margin-top: 8px;
+      margin-bottom: 20px;
+      color: #202020;
+      font-weight: bold;
+  }
+  .card-div{
+      margin-top: 15%;
+  }

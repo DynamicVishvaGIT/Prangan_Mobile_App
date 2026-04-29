@@ -1,0 +1,54 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "com-sarriaroman-photoviewer": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "com.razorpay.cordova": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-advanced-http": {
+      "ANDROIDX_WEBKIT_VERSION": "1.4.0",
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-appminimize": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-chooser": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    },
+    "cordova-plugin-fcm-with-dependecy-updated": {
+      "ANDROID_DEFAULT_NOTIFICATION_ICON": "@mipmap/ic_launcher",
+      "ANDROID_FCM_VERSION": "21.0.0",
+      "ANDROID_FIREBASE_BOM_VERSION": "26.0.0",
+      "ANDROID_GOOGLE_SERVICES_VERSION": "4.3.4",
+      "ANDROID_GRADLE_TOOLS_VERSION": "4.1.0",
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "ANDROIDX_WEBKIT_VERSION": "1.4.0",
+      "PACKAGE_NAME": "in.dynamicvishva.prangan"
+    }
+  }
+}

@@ -1,0 +1,182 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Preschool Admission Form</ion-title>
+    <!-- <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/parentsinfo']">
+        <ion-icon color="light" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+ 
+
+</ion-header>
+
+<ion-content>
+  <ion-row class="ion-text-center margin-ionic-top wrap">
+    <ion-col size="4">
+      <!-- <div class="active "> -->
+        <ion-icon [routerLink]="['/preschoolform']" name="checkmark-circle" class="checkmark" size="large" color="success"></ion-icon>
+      <!-- </div> -->
+      <p class="color-green" [routerLink]="['/preschoolform']" routerLinkActive="router-link-active" >Preschool Registration</p>
+    </ion-col>
+    <ion-col size="4">
+      <img src="../../assets/dashboard/checkmark.png" alt="" [routerLink]="['/parentsinfo']">
+
+      <p class="color-green" [routerLink]="['/parentsinfo']">Parents Info</p>
+
+
+    </ion-col>
+
+    <ion-col size="4">
+      <div class="icon-circle " >
+        <ion-icon name="ellipse" class="dot"></ion-icon>
+
+      </div>
+      <p class="color-red heading-3">Additional Information</p>
+
+    </ion-col>
+  </ion-row>
+  <div class="margin-ionic">
+<form [formGroup]="preschoolStepThreeForm" (ngSubmit)="onSubmit(preschoolStepThreeForm.value)">
+  <ion-label class="heading-1">Food Habits</ion-label>
+   
+  <ion-row>
+    <ion-col size="12">
+    <ion-label>What food does your child like ? <span class="text-danger">*</span></ion-label>
+    <ion-item lines="none">
+    <ion-input type="text" formControlName="q1_ans"></ion-input>
+    </ion-item>
+    </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>What food does your child dislike ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q2_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Is your child allergic to any food/medicine ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q3_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+ 
+      <ion-col size="12">
+        <ion-label>Is your child toilet-trained ? What word He/She uses ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q4_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Your child when free loves to..</ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q5_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>How do you discipline your child ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q6_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>How do you encourage your child to learn ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q7_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Your aspiration from your child... </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q8_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>What value would you like to inclucate to your child ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q9_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Why did you choose Prangan for your child? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q10_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>As a Father, How much time do you spend with your child and how ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q11_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>As a Mother, How much time do you spend with your child and how ? </ion-label>
+        <ion-item lines="none">
+          <ion-input type="text" formControlName="q12_ans"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-label>Areas of interest where parental contribution can enrich the school. </ion-label>
+        <ion-radio-group formControlName="q13_ans" allowEmptySelection="false" color="primary" >
+          <ion-row>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Music/ Dance/ Drawing"></ion-radio>
+                <ion-label>Music/ Dance/ Drawing </ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Social skills"></ion-radio>
+                <ion-label>Social skills</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Public Speaking"></ion-radio>
+                <ion-label>Public Speaking</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Painting/sculpting"></ion-radio>
+                <ion-label>Painting/sculpting</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Academics"></ion-radio>
+                <ion-label>Academics</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Crafts/ Arts"></ion-radio>
+                <ion-label>Crafts/ Arts</ion-label>
+              </ion-item>
+            </ion-col>
+            <ion-col size="4">
+              <ion-item lines="none">
+                <ion-radio value="Others"></ion-radio>
+                <ion-label>Others</ion-label>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-radio-group>
+      </ion-col>
+
+  </ion-row>
+  
+  <br>
+<div class="ion-text-center submit-btn">
+    <ion-button [disabled]="preschoolStepThreeForm.invalid" type="submit" shape="round"  routerLinkActive="router-link-active"  color="primary">
+      Submit
+    </ion-button>
+</div>
+</form>
+  </div>
+
+</ion-content>

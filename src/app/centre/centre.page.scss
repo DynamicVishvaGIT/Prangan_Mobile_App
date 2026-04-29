@@ -1,0 +1,14 @@
+ion-content {
+    --background:#f3fbfe;
+}
+ion-card {
+    margin-top: 16px;
+    p{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    ion-button {
+        margin-bottom: 16px;
+        text-transform: none;
+    }
+}

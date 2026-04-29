@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf="event">{{event|titlecase}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button  shape="round"[routerLink]="['/events']"  >
+        <ion-icon name="arrow-back-sharp" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="padding-ionic">
+    <ion-row >
+      <ion-col size="6">
+        <ion-img src="../../assets/events/01.png"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-img src="../../assets/events/02.png"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-img src="../../assets/events/03.png"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <ion-img src="../../assets/events/04.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

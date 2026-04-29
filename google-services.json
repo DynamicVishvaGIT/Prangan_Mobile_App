@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "123278500547",
+    "project_id": "cocoon-63d28",
+    "storage_bucket": "cocoon-63d28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123278500547:android:6c96a7495ec3ca639db876",
+        "android_client_info": {
+          "package_name": "in.dynamicvishva.prangan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123278500547-tklhhv5v8tjqen4oa00ae20gonotv7jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh0a1_KiSrVA9g66Y5JhLtAYQ1ehgZd-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123278500547-tklhhv5v8tjqen4oa00ae20gonotv7jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
